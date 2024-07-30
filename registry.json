@@ -21,13 +21,13 @@
 		{
 			"name": "No invisible animals",
 			"description": "Makes invisible animals visible",
-			"author": "noam",
+			"author": "pi & noam",
 			"file": "plugins/noinvisibleanimals.js"
 		},
 		{
 			"name": "XRAY",
 			"description": "See underground caves and animals through terrain",
-			"author": "noam",
+			"author": "pi & noam",
 			"file": "plugins/xray.js"
 		}
 	],
