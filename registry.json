@@ -1,0 +1,42 @@
+{
+	"plugins": [
+		{
+			"name": "Auto shake",
+			"description": "Emulate mouse shake when holding shake keybind",
+			"author": "noam",
+			"file": "plugins/autoshake.js"
+		},
+		{
+			"name": "Better vision",
+			"description": "No ink flash or deep darkness effects",
+			"author": "pi & noam",
+			"file": "plugins/bettervision.js"
+		},
+		{
+			"name": "I see dead fish!",
+			"description": "Lets you see ghosts",
+			"author": "pi & noam",
+			"file": "plugins/iseedeadfish.js"
+		},
+		{
+			"name": "No invisible animals",
+			"description": "Makes invisible animals visible",
+			"author": "noam",
+			"file": "plugins/noinvisibleanimals.js"
+		},
+		{
+			"name": "XRAY",
+			"description": "See underground caves and animals through terrain",
+			"author": "noam",
+			"file": "plugins/xray.js"
+		}
+	],
+	"assetpacks": [
+		{
+			"name": "Doc Assets",
+			"author": "The Doctorpus",
+			"baseUrl": "https://deeeepio-asset-packs.github.io/doc-assets/"
+		}
+	],
+	"themes": []
+}
