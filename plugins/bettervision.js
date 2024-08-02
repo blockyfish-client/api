@@ -1,8 +1,7 @@
-plugin.pluginData = {
-	name: "Better vision",
-	description: "No ink flash or deep darkness effects",
-	author: "pi & noam",
-};
+// @name Better vision
+// @id bettervision
+// @description No ink flash or deep darkness effects
+// @author pi and noam
 
 blockyfish.addEventListener("gameInit", ({ game }) => {
 	game.currentScene.toggleFlash = () => {};

@@ -1,8 +1,7 @@
-plugin.pluginData = {
-	name: "I see dead fish!",
-	author: "pi & noam",
-	description: "Lets you see ghosts",
-};
+// @name I see dead fish!
+// @id iseedeadfish
+// @description Lets you see ghosts
+// @author pi and noam
 
 blockyfish.addEventListener("gameInit", ({ game }) => {
 	game.currentScene.viewingGhosts = true;

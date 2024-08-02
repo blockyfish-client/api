@@ -1,8 +1,7 @@
-plugin.pluginData = {
-	name: "XRAY",
-	description: "See underground caves and animals through terrain",
-	author: "pi & noam",
-};
+// @name XRAY
+// @id xray
+// @description See underground cave and animals through terrain
+// @author pi and noam
 
 let game;
 setInterval(() => {

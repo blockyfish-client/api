@@ -1,8 +1,7 @@
-plugin.pluginData = {
-	name: "No invisible animals",
-	description: "Makes invisible animals visible",
-	author: "pi & noam",
-};
+// @name No invisible animals
+// @id noinvisibleanimals
+// @description Makes invisible animals visible
+// @author pi and noam
 
 let game;
 blockyfish.addEventListener("gameInit", ({ game: _game }) => {

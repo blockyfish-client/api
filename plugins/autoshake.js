@@ -1,8 +1,7 @@
-plugin.pluginData = {
-	name: "Auto shake",
-	description: "Emulate mouse shake when holding shake keybind",
-	author: "noam",
-};
+// @name Auto shake
+// @id autoshake
+// @description Emulate mouse shake when holding shake keybind
+// @author noam
 
 plugin.registerKeybind("shake", "KeyV");
 
