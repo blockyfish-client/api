@@ -5,35 +5,40 @@
 			"id": "autoshake",
 			"description": "Emulate mouse shake when holding shake keybind",
 			"author": "noam",
-			"file": "plugins/autoshake.js"
+			"file": "plugins/autoshake.js",
+			"version": 1
 		},
 		{
 			"name": "Better vision",
 			"id": "bettervision",
 			"description": "No ink flash or deep darkness effects",
 			"author": "pi and noam",
-			"file": "plugins/bettervision.js"
+			"file": "plugins/bettervision.js",
+			"version": 1
 		},
 		{
 			"name": "I see dead fish!",
 			"id": "iseedeadfish",
 			"description": "Lets you see ghosts",
 			"author": "pi and noam",
-			"file": "plugins/iseedeadfish.js"
+			"file": "plugins/iseedeadfish.js",
+			"version": 1
 		},
 		{
 			"name": "No invisible animals",
 			"id": "noinvisibleanimals",
 			"description": "Makes invisible animals visible",
 			"author": "pi and noam",
-			"file": "plugins/noinvisibleanimals.js"
+			"file": "plugins/noinvisibleanimals.js",
+			"version": 1
 		},
 		{
 			"name": "XRAY",
 			"id": "xray",
 			"description": "See underground caves and animals through terrain",
 			"author": "pi and noam",
-			"file": "plugins/xray.js"
+			"file": "plugins/xray.js",
+			"version": 1
 		}
 	],
 	"assetpacks": [
