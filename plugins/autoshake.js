@@ -27,7 +27,6 @@ plugin.onKeybindDown("Shake", () => {
 	if (inter != null) return;
 	inter = setInterval(() => {
 		if (game == null) return;
-		if (!plugin.isKeybindDown("Shake")) return;
 		if (
 			game.currentScene == null ||
 			game.currentScene.myAnimal == null ||

@@ -18,7 +18,6 @@ let inter = null;
 plugin.onKeybindDown("Spin", () => {
 	if (inter != null) return;
 	inter = setInterval(() => {
-		if (!plugin.isKeybindDown("Spin")) return;
 		const spin_coords_x = Math.round(
 			spin_radius * Math.sin((Math.PI * 2 * spin_angle[spin_direction]) / 360),
 		);
