@@ -33,6 +33,14 @@
 			"version": 1
 		},
 		{
+			"name": "No camera clamp",
+			"id": "nocameraclamp",
+			"description": "Camera position clamp is removed; your animal will always be centered on the screen",
+			"author": "pi",
+			"file": "plugins/nocameraclamp.js",
+			"version": 1
+		},
+		{
 			"name": "No invisible animals",
 			"id": "noinvisibleanimals",
 			"description": "Makes invisible animals visible",
