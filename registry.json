@@ -25,6 +25,14 @@
 			"version": 1
 		},
 		{
+			"name": "Evolution tree wheel",
+			"id": "evowheel",
+			"description": "View an evolution tree for tiers 8 - 10",
+			"author": "pi",
+			"file": "plugins/evowheel.js",
+			"version": 1
+		},
+		{
 			"name": "I see dead fish!",
 			"id": "iseedeadfish",
 			"description": "Lets you see ghosts",
