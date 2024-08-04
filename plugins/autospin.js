@@ -3,7 +3,7 @@
 // @description Spin really fast without breaking your arms
 // @author pi
 
-plugin.registerKeybind("spin", "KeyZ");
+plugin.registerKeybind("Spin", "KeyZ");
 
 let mapeditor;
 blockyfish.addEventListener("gameInit", () => {

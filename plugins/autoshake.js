@@ -3,7 +3,7 @@
 // @description Emulate mouse shake when holding shake keybind
 // @author noam
 
-plugin.registerKeybind("shake", "KeyV");
+plugin.registerKeybind("Shake", "KeyV");
 
 const formMovePacket = (x, y, idk) => {
 	const buf = new ArrayBuffer(10);
