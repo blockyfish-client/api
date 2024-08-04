@@ -15,10 +15,10 @@ const spin_angle = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360];
 const spin_radius = 300;
 
 let inter = null;
-plugin.onKeybindDown("spin", () => {
+plugin.onKeybindDown("Spin", () => {
 	if (inter != null) return;
 	inter = setInterval(() => {
-		if (!plugin.isKeybindDown("spin")) return;
+		if (!plugin.isKeybindDown("Spin")) return;
 		const spin_coords_x = Math.round(
 			spin_radius * Math.sin((Math.PI * 2 * spin_angle[spin_direction]) / 360),
 		);
@@ -36,7 +36,7 @@ plugin.onKeybindDown("spin", () => {
 		} catch {}
 	}, 15);
 });
-plugin.onKeybindUp("spin", () => {
+plugin.onKeybindUp("Spin", () => {
 	clearInterval(inter);
 	inter = null;
 });

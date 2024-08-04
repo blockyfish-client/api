@@ -23,11 +23,11 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 });
 
 let inter = null;
-plugin.onKeybindDown("shake", () => {
+plugin.onKeybindDown("Shake", () => {
 	if (inter != null) return;
 	inter = setInterval(() => {
 		if (game == null) return;
-		if (!plugin.isKeybindDown("shake")) return;
+		if (!plugin.isKeybindDown("Shake")) return;
 		if (
 			game.currentScene == null ||
 			game.currentScene.myAnimal == null ||
@@ -47,7 +47,7 @@ plugin.onKeybindDown("shake", () => {
 		FORWARD = !FORWARD;
 	}, 100);
 });
-plugin.onKeybindUp("shake", () => {
+plugin.onKeybindUp("Shake", () => {
 	clearInterval(inter);
 	inter = null;
 });
