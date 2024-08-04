@@ -9,6 +9,14 @@
 			"version": 1
 		},
 		{
+			"name": "Auto spin",
+			"id": "autospin",
+			"description": "Spin really fast without breaking your arms",
+			"author": "pi",
+			"file": "plugins/autospin.js",
+			"version": 1
+		},
+		{
 			"name": "Better vision",
 			"id": "bettervision",
 			"description": "No ink flash or deep darkness effects",
