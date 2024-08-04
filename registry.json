@@ -41,6 +41,14 @@
 			"version": 1
 		},
 		{
+			"name": "No zoom limit",
+			"id": "nozoomlimit",
+			"description": "Zoom clamp is removed. You can zoom in or out as far as you want",
+			"author": "pi",
+			"file": "plugins/nozoomlimit.js",
+			"version": 1
+		},
+		{
 			"name": "XRAY",
 			"id": "xray",
 			"description": "See underground caves and animals through terrain",
@@ -56,5 +64,6 @@
 			"baseUrl": "https://deeeepio-asset-packs.github.io/doc-assets/"
 		}
 	],
-	"themes": []
+	"themes": [],
+	"knownversion": "9fcb82c9"
 }
