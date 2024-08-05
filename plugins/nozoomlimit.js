@@ -5,11 +5,6 @@
 
 blockyfish.addEventListener("gameInit", ({ game }) => {
 	setInterval(function () {
-		try {
-			game.viewport.clampZoom({
-				minWidth: 0,
-				maxWidth: 1e7
-			});
-		} catch {}
+		game.viewport.clampZoom({minWidth: 0, maxWidth: 1e7});
 	}, 200);
 });
