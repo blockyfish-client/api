@@ -65,6 +65,14 @@
 			"version": 1
 		},
 		{
+			"name": "Quick Disconnect",
+			"id": "quickdisconnect",
+			"description": "Press Q to disconnect from any server",
+			"author": "pi",
+			"file": "plugins/quickdisconnect.js",
+			"version": 1
+		},
+		{
 			"name": "XRAY",
 			"id": "xray",
 			"description": "See underground caves and animals through terrain",
