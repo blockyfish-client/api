@@ -79,6 +79,14 @@
 			"author": "pi and noam",
 			"file": "plugins/xray.js",
 			"version": 1
+		},
+		{
+			"name": "Pearl defense double animal",
+			"id": "pddoubleanimal",
+			"description": "Press the options keybind to get all evolution options in pearl defense",
+			"author": "pi and noam",
+			"file": "plugins/doubleanimal.js",
+			"version": 1
 		}
 	],
 	"assetpacks": [
