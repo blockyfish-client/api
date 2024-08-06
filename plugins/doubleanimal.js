@@ -6,5 +6,5 @@
 plugin.registerKeybind("Get all options", "Equal");
 
 plugin.onKeybindDown("Get all options", () => {
-    blockyfish.pdoptions();
+    blockyfish.reloadEvolutionOptions();
 })
