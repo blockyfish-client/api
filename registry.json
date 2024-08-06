@@ -84,7 +84,7 @@
 			"name": "Pearl defense double animal",
 			"id": "pddoubleanimal",
 			"description": "Press the options keybind to get all evolution options in pearl defense",
-			"author": "pi and noam",
+			"author": "noam",
 			"file": "plugins/doubleanimal.js",
 			"version": 1
 		}
