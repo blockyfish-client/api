@@ -11,6 +11,7 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 	game = _game;
 });
 
-plugin.onKeybindDown("Disconnect", () => {
-	game.inputManager.socketManager.disconnect();
+document.addEventListener("keydown", (e) => {
+	if (e.code === plugin.getKeybind("Disconnect") && e.ctrlKey && e.shiftKey)
+		game.socketManager.disconnect();
 });
