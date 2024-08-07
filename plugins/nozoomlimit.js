@@ -4,7 +4,8 @@
 // @author pi
 
 blockyfish.addEventListener("gameInit", ({ game }) => {
-	setInterval(function () {
+	let inter = setInterval(function () {
+		if (game.currentScene == null) return clearInterval(inter);
 		game.viewport.clampZoom({minWidth: 0, maxWidth: 1e7});
 	}, 200);
 });
