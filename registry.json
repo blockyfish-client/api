@@ -1,6 +1,14 @@
 {
 	"plugins": [
 		{
+			"name": "Aim line",
+			"id": "aimline",
+			"description": "Hold down ctrl to show a red aim line on some animals. Requires WebGL to be enabled.",
+			"author": "pi",
+			"file": "plugins/aimline.js",
+			"version": 1
+		},
+		{
 			"name": "Auto shake",
 			"id": "autoshake",
 			"description": "Emulate mouse shake when holding shake keybind",
