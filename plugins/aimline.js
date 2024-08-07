@@ -10,8 +10,8 @@ const geometry = new PIXI.Geometry()
 		//  x,   y
 			-2,  0,    // tl
 			 2,  0,    // tr
-			 2, -1600, // br
-			-2, -1600, // bl
+			 2, -1000, // br
+			-2, -1000, // bl
 		],
 		2,
 	)
