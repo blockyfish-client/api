@@ -107,10 +107,10 @@
 		{
 			"name": "Reverse aim",
 			"id": "reverseaim",
-			"description": "Automatically reverses movement",
+			"description": "Automatically reverses movement on some animals",
 			"author": "noam",
 			"file": "plugins/reverseaim.js",
-			"version": 1
+			"version": 1.1
 		}
 	],
 	"assetpacks": [

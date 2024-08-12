@@ -1,6 +1,6 @@
 // @name Reverse aim
 // @id reverseaim
-// @description Automatically reverses movement 
+// @description Automatically reverses movement on some animals
 // @author noam
 
 let game;
@@ -26,7 +26,6 @@ setInterval(() => {
     const animal = game.currentScene.myAnimal;
     switch (animal.fishLevelData.fishLevel) {
         case 101:
-        case 126:
             reverse = animal._usingSkill
             break;
     }
