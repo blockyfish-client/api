@@ -103,6 +103,14 @@
 			"author": "noam",
 			"file": "plugins/doubleanimal.js",
 			"version": 1
+		},
+		{
+			"name": "Reverse aim",
+			"id": "reverseaim",
+			"description": "Automatically reverses movement",
+			"author": "noam",
+			"file": "plugins/reverseaim.js",
+			"version": 1
 		}
 	],
 	"assetpacks": [
