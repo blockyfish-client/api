@@ -121,7 +121,7 @@
 		}
 	],
 	"themes": [],
-	"knownversion": "9fcb82c9",
+	"knownversions": ["9fcb82c9", "500a6d96"],
 	"version": "4.0.0",
-	"showAlphaButton": true
+	"showalphabutton": true
 }
