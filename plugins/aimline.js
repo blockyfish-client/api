@@ -74,7 +74,11 @@ const includedAnimals = [61, 93, 94, 113];
 let currentFishLevel = -1;
 let aimLine;
 const createAimLine = () => {
-	if (typeof game?.currentScene?.myAnimal?.visibleFishLevel === "undefined" || game.currentScene.myAnimal.visibleFishLevel === currentFishLevel) return;
+	if (typeof game?.currentScene?.myAnimal?.visibleFishLevel === "undefined" ) {
+        currentFishLevel = -1;
+        return;
+    }
+    if (game.currentScene.myAnimal.visibleFishLevel === currentFishLevel) return;
 	currentFishLevel = game.currentScene.myAnimal.visibleFishLevel;
 	if (!includedAnimals.includes(currentFishLevel)) return;
 
