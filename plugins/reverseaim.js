@@ -27,6 +27,9 @@ setInterval(() => {
     switch (animal.fishLevelData.fishLevel) {
         case 101:
             reverse = animal._usingSkill
-            break;
+        break;
+        case 126:
+            reverse = animal._usingSkill
+        break;
     }
 });
