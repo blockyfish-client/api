@@ -60,7 +60,7 @@ window.addEventListener(
 	(e) => {
 		try {
 			showCtrlOverlay(e);
-			if (e.ctrlKey) {
+			if (e.ctrlKey || e.metaKey) {
 				ctrlKey = true;
 			}
 			if (e.altKey) {
@@ -80,7 +80,7 @@ window.addEventListener(
 			if (!e.ctrlKey && !e.altKey) {
 				document.getElementById("ctrl-overlay").style.pointerEvents = "none";
 			}
-			if (!e.ctrlKey) {
+			if (!e.ctrlKey && !e.metaKey) {
 				ctrlKey = false;
 			}
 			if (!e.altKey) {
