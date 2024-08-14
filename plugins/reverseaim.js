@@ -26,7 +26,7 @@ setInterval(() => {
     const animal = game.currentScene.myAnimal;
     switch (animal.fishLevelData.fishLevel) {
         case 101:
+        //case 126: this wouldnt work
             reverse = animal._usingSkill
-            break;
     }
 });
