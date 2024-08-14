@@ -46,7 +46,7 @@
 			"description": "Ctrl + click for full boost, alt + click for half boost, and ctrl + shift + click for super jump/thresher super boost",
 			"author": "pi",
 			"file": "plugins/boosthack.js",
-			"version": 1
+			"version": 1.1
 		},
 		{
 			"name": "I see dead fish!",

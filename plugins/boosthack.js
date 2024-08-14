@@ -54,6 +54,7 @@ const showCtrlOverlay = (e) => {
 
 let ctrlKey = false;
 let altKey = false;
+let shiftKey = false;
 window.addEventListener(
 	"keydown",
 	(e) => {
@@ -64,6 +65,9 @@ window.addEventListener(
 			}
 			if (e.altKey) {
 				altKey = true;
+			}
+			if (e.shiftKey) {
+				shiftKey = true;
 			}
 		} catch {}
 	},
@@ -82,6 +86,9 @@ window.addEventListener(
 			if (!e.altKey) {
 				altKey = false;
 			}
+			if (!e.shiftKey) {
+				shiftKey = false;
+			}
 		} catch {}
 	},
 	false,
@@ -90,9 +97,9 @@ window.addEventListener(
 	"click",
 	(e) => {
 		try {
-			if (e.ctrlKey) {
+			if (ctrlKey) {
 				if (
-					e.shiftKey &&
+					shiftKey &&
 					[107, 109].includes(game.currentScene.myAnimal._visibleFishLevel)
 				) {
 					blockyfish.boost();
@@ -100,7 +107,7 @@ window.addEventListener(
 						blockyfish.chargedBoost();
 					}, 30);
 				} else if (
-					e.shiftKey &&
+					shiftKey &&
 					game.currentScene.myAnimal._visibleFishLevel !== 101
 				) {
 					blockyfish.superJump();
@@ -108,7 +115,7 @@ window.addEventListener(
 					blockyfish.chargedBoost();
 				}
 			}
-			if (e.altKey) {
+			if (altKey) {
 				blockyfish.halfChargedBoost();
 			}
 		} catch {}
