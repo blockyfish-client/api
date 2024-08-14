@@ -70,7 +70,7 @@
 			"description": "Makes invisible animals visible",
 			"author": "pi and noam",
 			"file": "plugins/noinvisibleanimals.js",
-			"version": 1.1
+			"version": 1.2
 		},
 		{
 			"name": "No zoom limit",
