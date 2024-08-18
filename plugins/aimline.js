@@ -1,6 +1,6 @@
 // @name Aim line
 // @id aimline
-// @description Hold down ctrl to show a red aim line on some animals. Requires WebGL to be enabled.
+// @description Hold down ctrl/cmd to show a red aim line on some animals. Requires WebGL to be enabled.
 // @author pi
 
 const geometry = new PIXI.Geometry()
@@ -100,7 +100,7 @@ window.addEventListener(
 	"keydown",
 	(e) => {
 		try {
-			if (e.ctrlKey) {
+			if (e.ctrlKey || e.metaKey) {
 				aimLine.renderable = true;
 			}
 		} catch { }
@@ -111,7 +111,7 @@ window.addEventListener(
 	"keyup",
 	(e) => {
 		try {
-			if (!e.ctrlKey) {
+			if (!e.ctrlKey && !e.metaKey) {
 				aimLine.renderable = false;
 			}
 		} catch { }
