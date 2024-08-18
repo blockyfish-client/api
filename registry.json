@@ -83,10 +83,10 @@
 		{
 			"name": "Quick Disconnect",
 			"id": "quickdisconnect",
-			"description": "Press Q to disconnect from any server",
+			"description": "Press ctrl/cmd + shift + Q to disconnect from any server",
 			"author": "pi",
 			"file": "plugins/quickdisconnect.js",
-			"version": 1
+			"version": 1.1
 		},
 		{
 			"name": "XRAY",
