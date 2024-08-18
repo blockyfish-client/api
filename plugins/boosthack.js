@@ -1,6 +1,6 @@
 // @name Instant charged boost
 // @id boosthack
-// @description Ctrl + click for full boost, alt + click for half boost, and ctrl + shift + click for super jump/thresher super boost
+// @description ctrl/cmd + click for full boost, alt + click for half boost, and ctrl/cmd + shift + click for super jump/thresher super boost
 // @author pi
 
 const createOverlay = () => {

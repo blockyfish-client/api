@@ -43,10 +43,10 @@
 		{
 			"name": "Instant charged boost",
 			"id": "boosthack",
-			"description": "Ctrl + click for full boost, alt + click for half boost, and ctrl + shift + click for super jump/thresher super boost",
+			"description": "ctrl/cmd + click for full boost, alt + click for half boost, and ctrl/cmd + shift + click for super jump/thresher super boost",
 			"author": "pi",
 			"file": "plugins/boosthack.js",
-			"version": 1.3
+			"version": 1.4
 		},
 		{
 			"name": "I see dead fish!",
