@@ -70,7 +70,7 @@
 			"description": "Makes invisible animals visible",
 			"author": "pi and noam",
 			"file": "plugins/noinvisibleanimals.js",
-			"version": 1.1
+			"version": 1.2
 		},
 		{
 			"name": "No zoom limit",
@@ -110,7 +110,7 @@
 			"description": "Automatically reverses movement on some animals",
 			"author": "noam",
 			"file": "plugins/reverseaim.js",
-			"version": 1.1
+			"version": 1.4
 		}
 	],
 	"assetpacks": [
@@ -122,6 +122,6 @@
 	],
 	"themes": [],
 	"knownversions": ["9fcb82c9", "500a6d96"],
-	"version": "4.0.0",
+	"version": "4.0.2",
 	"showalphabutton": true
 }
