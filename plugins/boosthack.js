@@ -32,7 +32,7 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 });
 
 const showCtrlOverlay = (e) => {
-	if (e.ctrlKey || e.altKey) {
+	if (e.ctrlKey || e.metaKey || e.altKey) {
 		try {
 			if (game.currentScene != null) {
 				if (game.currentScene.myAnimal != null) {
