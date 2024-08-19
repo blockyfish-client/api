@@ -11,10 +11,10 @@
 		{
 			"name": "Auto shake",
 			"id": "autoshake",
-			"description": "Emulate mouse shake when holding shake keybind",
+			"description": "Press the shake keybind to toggle",
 			"author": "noam",
 			"file": "plugins/autoshake.js",
-			"version": 1
+			"version": 1.1
 		},
 		{
 			"name": "Auto spin",
