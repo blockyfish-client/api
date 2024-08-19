@@ -19,7 +19,8 @@ const createOverlay = () => {
 				position: "absolute",
 				display: "block",
 				zIndex: 10000,
-				pointerEvents: "none",
+				pointerEvents: "auto",
+				userSelect: "none",
 			}}
 		/>,
 	);
