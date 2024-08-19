@@ -98,6 +98,8 @@ window.addEventListener(
 	(e) => {
 		try {
 			if (ctrlKey) {
+				e.preventDefault();
+				e.stopPropagation();
 				if (
 					shiftKey &&
 					[107, 109].includes(game.currentScene.myAnimal._visibleFishLevel)
@@ -116,11 +118,13 @@ window.addEventListener(
 				}
 			}
 			if (altKey) {
+				e.preventDefault();
+				e.stopPropagation();
 				blockyfish.halfChargedBoost();
 			}
 		} catch {}
 	},
-	false,
+	true,
 );
 window.addEventListener("focus", () => {
 	try {
