@@ -23,6 +23,41 @@ const createOverlay = () => {
 			}}
 		/>,
 	);
+
+	document.getElementById("ctrl-overlay").addEventListener(
+		"click",
+		(e) => {
+			if (e.ctrlKey || e.metaKey || e.altKey) {
+				e.preventDefault();
+				e.stopPropagation();
+			}
+
+			try {
+				if (ctrlKey) {
+					if (
+						shiftKey &&
+						[107, 109].includes(game.currentScene.myAnimal._visibleFishLevel)
+					) {
+						blockyfish.boost();
+						setTimeout(() => {
+							blockyfish.chargedBoost();
+						}, 30);
+					} else if (
+						shiftKey &&
+						game.currentScene.myAnimal._visibleFishLevel !== 101
+					) {
+						blockyfish.superJump();
+					} else {
+						blockyfish.chargedBoost();
+					}
+				}
+				if (altKey) {
+					blockyfish.halfChargedBoost();
+				}
+			} catch {}
+		},
+		true,
+	);
 };
 
 let game;
@@ -92,39 +127,6 @@ window.addEventListener(
 		} catch {}
 	},
 	false,
-);
-window.addEventListener(
-	"click",
-	(e) => {
-		try {
-			if (ctrlKey) {
-				e.preventDefault();
-				e.stopPropagation();
-				if (
-					shiftKey &&
-					[107, 109].includes(game.currentScene.myAnimal._visibleFishLevel)
-				) {
-					blockyfish.boost();
-					setTimeout(() => {
-						blockyfish.chargedBoost();
-					}, 30);
-				} else if (
-					shiftKey &&
-					game.currentScene.myAnimal._visibleFishLevel !== 101
-				) {
-					blockyfish.superJump();
-				} else {
-					blockyfish.chargedBoost();
-				}
-			}
-			if (altKey) {
-				e.preventDefault();
-				e.stopPropagation();
-				blockyfish.halfChargedBoost();
-			}
-		} catch {}
-	},
-	true,
 );
 window.addEventListener("focus", () => {
 	try {
