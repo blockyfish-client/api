@@ -77,7 +77,7 @@ window.addEventListener(
 	"keyup",
 	(e) => {
 		try {
-			if (!e.ctrlKey && !e.altKey) {
+			if (!e.ctrlKey && !e.metaKey && !e.altKey) {
 				document.getElementById("ctrl-overlay").style.pointerEvents = "none";
 			}
 			if (!e.ctrlKey && !e.metaKey) {
