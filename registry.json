@@ -123,5 +123,7 @@
 	"themes": [],
 	"knownversions": ["9fcb82c9", "500a6d96"],
 	"version": "4.0.2",
-	"showalphabutton": true
+	"showalphabutton": true,
+	"logo": {},
+	"css": ""
 }
