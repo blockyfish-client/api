@@ -124,6 +124,15 @@
 	"knownversions": ["9fcb82c9", "500a6d96"],
 	"version": "4.0.2",
 	"showalphabutton": true,
-	"logo": {},
-	"css": ""
+	"logo": {
+		"animal1": "arapaima",
+		"animal2": "capybara",
+		"customTextStyles": {
+			"background": "linear-gradient(0deg, rgba(49,154,55,1) 0%, rgba(112,183,63,1) 100%)",
+			"backgroundClip": "text",
+			"color": "transparent",
+			"WebkitTextStroke": "0.5px #a5c953"
+		}
+	},
+	"css": ".home-bg {background-image: url('https://blockyfish-client.github.io/assets/dpbg7.png') !important;}"
 }
