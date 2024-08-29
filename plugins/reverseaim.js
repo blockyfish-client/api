@@ -7,7 +7,7 @@ let game;
 let reverse = false;
 blockyfish.addEventListener("gameInit", ({ game: _game }) => {
     game = _game;
-    if (getnative(game.inputManager.raw_getMouseWorldPosition) === game.inputManager.raw_getMouseWorldPosition) {
+    if (!ishooked(game.inputManager.raw_getMouseWorldPosition)) {
         hook(game.inputManager, game.inputManager.key_getMouseWorldPosition, {
             apply(f, th, args) {
                 if (!reverse || game == null || game.currentScene == null || game.currentScene.myAnimal == null) return reflect.apply(f, th, args);
