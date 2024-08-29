@@ -1,6 +1,6 @@
 // @name Instant charged boost
 // @id boosthack
-// @description Ctrl + click for full boost, alt + click for half boost, and ctrl + shift + click for super jump/thresher super boost
+// @description ctrl/cmd + click for full boost, alt + click for half boost, and ctrl/cmd + shift + click for super jump/thresher super boost
 // @author pi
 
 const createOverlay = () => {
@@ -32,7 +32,7 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 });
 
 const showCtrlOverlay = (e) => {
-	if (e.ctrlKey || e.altKey) {
+	if (e.ctrlKey || e.metaKey || e.altKey) {
 		try {
 			if (game.currentScene != null) {
 				if (game.currentScene.myAnimal != null) {
@@ -77,7 +77,7 @@ window.addEventListener(
 	"keyup",
 	(e) => {
 		try {
-			if (!e.ctrlKey && !e.altKey) {
+			if (!e.ctrlKey && !e.metaKey && !e.altKey) {
 				document.getElementById("ctrl-overlay").style.pointerEvents = "none";
 			}
 			if (!e.ctrlKey && !e.metaKey) {

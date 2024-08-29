@@ -3,18 +3,18 @@
 		{
 			"name": "Aim line",
 			"id": "aimline",
-			"description": "Hold down ctrl to show a red aim line on some animals. Requires WebGL to be enabled.",
+			"description": "Hold down ctrl/cmd to show a red aim line on some animals. Requires WebGL to be enabled.",
 			"author": "pi",
 			"file": "plugins/aimline.js",
-			"version": 1.1
+			"version": 1.2
 		},
 		{
 			"name": "Auto shake",
 			"id": "autoshake",
-			"description": "Emulate mouse shake when holding shake keybind",
+			"description": "Press the shake keybind to toggle",
 			"author": "noam",
 			"file": "plugins/autoshake.js",
-			"version": 1
+			"version": 1.1
 		},
 		{
 			"name": "Auto spin",
@@ -43,10 +43,10 @@
 		{
 			"name": "Instant charged boost",
 			"id": "boosthack",
-			"description": "Ctrl + click for full boost, alt + click for half boost, and ctrl + shift + click for super jump/thresher super boost",
+			"description": "ctrl/cmd + click for full boost, alt + click for half boost, and ctrl/cmd + shift + click for super jump/thresher super boost",
 			"author": "pi",
 			"file": "plugins/boosthack.js",
-			"version": 1.2
+			"version": 1.9
 		},
 		{
 			"name": "I see dead fish!",
@@ -83,10 +83,10 @@
 		{
 			"name": "Quick Disconnect",
 			"id": "quickdisconnect",
-			"description": "Press Q to disconnect from any server",
+			"description": "Press ctrl/cmd + shift + Q to disconnect from any server",
 			"author": "pi",
 			"file": "plugins/quickdisconnect.js",
-			"version": 1
+			"version": 1.1
 		},
 		{
 			"name": "XRAY",
@@ -122,6 +122,8 @@
 	],
 	"themes": [],
 	"knownversions": ["9fcb82c9", "500a6d96"],
-	"version": "4.0.2",
-	"showalphabutton": true
+	"version": "4.1.0",
+	"showalphabutton": true,
+	"logo": {},
+	"css": ""
 }
