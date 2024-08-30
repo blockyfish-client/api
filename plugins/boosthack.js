@@ -5,7 +5,7 @@
 
 const createOverlay = () => {
 	try {
-		document.getElementById("ctrl-overlay").remove();
+		document.getElementById("ctrl-overlay").parentElement.remove();
 	} catch {}
 
 	const overlay = document.createElement("div");
@@ -20,6 +20,7 @@ const createOverlay = () => {
 				display: "block",
 				zIndex: 10000,
 				pointerEvents: "none",
+				userSelect: "none",
 			}}
 		/>,
 	);
@@ -103,8 +104,7 @@ window.addEventListener(
 				} else {
 					blockyfish.chargedBoost();
 				}
-			}
-			if (altKey) {
+			} else if (altKey) {
 				blockyfish.halfChargedBoost();
 			}
 		} catch {}
