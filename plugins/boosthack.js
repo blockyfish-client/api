@@ -31,25 +31,12 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 	createOverlay();
 });
 
-const showCtrlOverlay = (e) => {
-	if (e.ctrlKey || e.metaKey || e.altKey) {
-		try {
-			if (game.currentScene != null) {
-				if (game.currentScene.myAnimal != null) {
-					if (game.currentScene.myAnimal._visibleFishLevel !== 101) {
-						document.getElementById("ctrl-overlay").style.pointerEvents = "all";
-					} else if (!e.shiftKey) {
-						if (game.currentScene.myAnimal._visibleFishLevel === 101)
-							document.getElementById("ctrl-overlay").style.pointerEvents =
-								"all";
-					} else {
-						document.getElementById("ctrl-overlay").style.pointerEvents =
-							"none";
-					}
-				}
-			}
-		} catch {}
-	}
+const showCtrlOverlay = () => {
+	try {
+		if (game?.currentScene?.myAnimal) {
+			document.getElementById("ctrl-overlay").style.pointerEvents = "all";
+		}
+	} catch {}
 };
 
 let ctrlKey = false;
@@ -59,7 +46,9 @@ window.addEventListener(
 	"keydown",
 	(e) => {
 		try {
-			showCtrlOverlay(e);
+			if (e.ctrlKey || e.metaKey || e.altKey) {
+				showCtrlOverlay(e);
+			}
 			if (e.ctrlKey || e.metaKey) {
 				ctrlKey = true;
 			}
@@ -98,19 +87,19 @@ window.addEventListener(
 	(e) => {
 		try {
 			if (ctrlKey) {
-				if (
-					shiftKey &&
-					[107, 109].includes(game.currentScene.myAnimal._visibleFishLevel)
-				) {
-					blockyfish.boost();
-					setTimeout(() => {
-						blockyfish.chargedBoost();
-					}, 30);
-				} else if (
-					shiftKey &&
-					game.currentScene.myAnimal._visibleFishLevel !== 101
-				) {
-					blockyfish.superJump();
+				if (shiftKey) {
+					if (
+						[101, 107, 109].includes(
+							game.currentScene.myAnimal._visibleFishLevel,
+						)
+					) {
+						blockyfish.boost();
+						setTimeout(() => {
+							blockyfish.chargedBoost();
+						}, 30);
+					} else {
+						blockyfish.superJump();
+					}
 				} else {
 					blockyfish.chargedBoost();
 				}
