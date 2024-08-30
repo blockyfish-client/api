@@ -25,6 +25,7 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 let held = false;
 let inter = null;
 plugin.onKeybindDown("Shake", () => {
+	if (game == null || game.currentScene == null) return;
 	if (held) return;
 	held = true;
 	if (inter != null) {
@@ -37,7 +38,7 @@ plugin.onKeybindDown("Shake", () => {
 		);
 	} else {
 		inter = setInterval(() => {
-			if (game == null) return;
+			if (game == null || game.currentScene) return clearInterval(inter);
 			if (
 				game.currentScene == null ||
 				game.currentScene.myAnimal == null ||
