@@ -97,7 +97,7 @@ window.addEventListener(
 						blockyfish.boost();
 						setTimeout(() => {
 							blockyfish.chargedBoost();
-						}, 30);
+						}, 16);
 					} else {
 						blockyfish.superJump();
 					}
