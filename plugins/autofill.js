@@ -8,6 +8,7 @@ let inp = document.querySelector(".el-input__wrapper input");
 
 function autofill() {
 	inp.value = nameval;
+	inp.dispatchEvent(new Event('input', { bubbles: true }));
 	inp.oninput = () => {
 		if (nameval != (nameval = inp.value)) {
 			plugin.storage.set("Autofill Name", nameval);
