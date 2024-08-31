@@ -111,6 +111,14 @@
 			"author": "noam",
 			"file": "plugins/reverseaim.js",
 			"version": "1.4"
+		},
+		{
+			"name": "Autofill name",
+			"id": "autofill",
+			"description": "Autofills name automatically",
+			"author": "noam",
+			"file": "plugins/autofill.js",
+			"version": "1"
 		}
 	],
 	"assetpacks": [
