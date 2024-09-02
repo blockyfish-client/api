@@ -119,6 +119,14 @@
 			"author": "noam",
 			"file": "plugins/autofill.js",
 			"version": "1.2"
+		},
+		{
+			"name": "Autofill log-in",
+			"id": "loginautofill",
+			"description": "Autofills username and password automatically",
+			"author": "pi",
+			"file": "plugins/loginautofill.js",
+			"version": "1"
 		}
 	],
 	"assetpacks": [
