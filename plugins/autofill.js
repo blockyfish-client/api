@@ -4,26 +4,32 @@
 // @author noam
 
 let nameval = plugin.storage.get("Autofill Name") || "";
-let inp = document.querySelector(".el-input__wrapper input");
+let inp = document.querySelector(".name-input input");
 
+let x = false;
 function autofill() {
+	if (x) return;
+	x = true;
+
 	inp.value = nameval;
-	inp.dispatchEvent(new Event('input', { bubbles: true }));
+	inp.dispatchEvent(new Event("input", { bubbles: true }));
 	inp.oninput = () => {
-		if (nameval != (nameval = inp.value)) {
+		if (nameval !== inp.value) {
+			nameval = inp.value;
 			plugin.storage.set("Autofill Name", nameval);
 		}
-	}
+	};
 }
 
+let interval;
 if (inp == null) {
-	let interval = setInterval(() => {
-		inp = document.querySelector(".el-input__wrapper input");
+	interval = setInterval(() => {
+		inp = document.querySelector(".name-input input");
 		if (inp != null) {
 			clearInterval(interval);
 			autofill();
 		}
-	})
+	}, 200);
 } else {
 	autofill();
 }
