@@ -127,6 +127,14 @@
 			"author": "pi",
 			"file": "plugins/loginautofill.js",
 			"version": "1"
+		},
+		{
+			"name": "Black",
+			"id": "pearsaehify",
+			"description": "Lose all your rights and start getting a taste for koolaid kfc and watermelon",
+			"author": "noam",
+			"file": "plugins/pearsaehify.js",
+			"version": "1"
 		}
 	],
 	"assetpacks": [
