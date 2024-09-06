@@ -16,7 +16,7 @@ setInterval(()=>{
 		const animal = animalsList[i];
 		let sprite = animal?.sprite;
 		if (sprite != null) {
-			sprite._tintRGB = 0x001c3e; // brown
+			sprite._tintRGB = sprite._cachedTint = sprite._tintColor._int = sprite._tintColor._value = 0x001c3e; // brown
 		}
 	}
 });
