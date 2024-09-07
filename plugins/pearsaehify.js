@@ -14,9 +14,9 @@ setInterval(()=>{
 	let animalsList = game.currentScene.entityManager.animalsList;
 	for(let i = 0; i < animalsList.length; i++) {
 		const animal = animalsList[i];
-		let skin = animal?.children?.[1]?.children[0];
-		if (skin != null) {
-			skin._tintRGB = 0x001c3e; // brown
+		let sprite = animal?.sprite;
+		if (sprite != null) {
+			sprite._tintRGB = sprite._cachedTint = sprite._tintColor._int = sprite._tintColor._value = 0x001c3e; // brown
 		}
 	}
 });
