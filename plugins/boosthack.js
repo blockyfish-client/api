@@ -114,5 +114,8 @@ window.addEventListener(
 window.addEventListener("focus", () => {
 	try {
 		document.getElementById("ctrl-overlay").style.pointerEvents = "none";
+		ctrlKey = false;
+		altKey = false;
+		shiftKey = false;
 	} catch {}
 });
