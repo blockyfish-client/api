@@ -5,29 +5,41 @@
 
 const geometry = new PIXI.Geometry()
 	.addAttribute(
-		'aVertexPosition',
+		"aVertexPosition",
 		[
-		//  x,   y
-			-2,  0,    // tl
-			 2,  0,    // tr
-			 2, -1000, // br
-			-2, -1000, // bl
+			//  x,   y
+			-2,
+			0, // tl
+			2,
+			0, // tr
+			2,
+			-1000, // br
+			-2,
+			-1000, // bl
 		],
 		2,
 	)
 	.addAttribute(
-		'aColor',
+		"aColor",
 		[
-		//  r, g, b
-			1, 0, 0, // tl
-			1, 0, 0, // tr
-			1, 0, 0, // br
-			1, 0, 0, // bl
+			//  r, g, b
+			1,
+			0,
+			0, // tl
+			1,
+			0,
+			0, // tr
+			1,
+			0,
+			0, // br
+			1,
+			0,
+			0, // bl
 		],
 		3,
 	)
 	.addAttribute(
-		'aAlpha',
+		"aAlpha",
 		[
 			1, // tl
 			1, // tr
@@ -37,11 +49,16 @@ const geometry = new PIXI.Geometry()
 		1,
 	)
 	.addIndex([
-		0, 1, 2, // first triangle
-		0, 2, 3, // second triangle
+		0,
+		1,
+		2, // first triangle
+		0,
+		2,
+		3, // second triangle
 	]);
 
-const shader = PIXI.Shader.from(`
+const shader = PIXI.Shader.from(
+	`
     precision mediump float;
     attribute vec2 aVertexPosition;
     attribute vec3 aColor;
@@ -58,7 +75,8 @@ const shader = PIXI.Shader.from(`
         vAlpha = aAlpha;
         gl_Position = vec4((projectionMatrix * translationMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);
     }
-	`,`
+	`,
+	`
 	precision mediump float;
 
     varying vec3 vColor;
@@ -67,18 +85,26 @@ const shader = PIXI.Shader.from(`
     void main() {
         gl_FragColor = vec4(vColor, 1.0) * vAlpha;
     }
-`);
+`,
+);
 
-const includedAnimals = [61, 93, 94, 113];
+const { Animals } = blockyfish;
+const includedAnimals = [
+	Animals.Archerfish,
+	Animals.BeakedWhale,
+	Animals.GoblinShark,
+	Animals.PolarBear,
+	Animals.SeaOtter,
+];
 
 let currentFishLevel = -1;
 let aimLine;
 const createAimLine = () => {
-	if (typeof game?.currentScene?.myAnimal?.visibleFishLevel === "undefined" ) {
-        currentFishLevel = -1;
-        return;
-    }
-    if (game.currentScene.myAnimal.visibleFishLevel === currentFishLevel) return;
+	if (typeof game?.currentScene?.myAnimal?.visibleFishLevel === "undefined") {
+		currentFishLevel = -1;
+		return;
+	}
+	if (game.currentScene.myAnimal.visibleFishLevel === currentFishLevel) return;
 	currentFishLevel = game.currentScene.myAnimal.visibleFishLevel;
 	if (!includedAnimals.includes(currentFishLevel)) return;
 
@@ -94,7 +120,7 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 
 setInterval(() => {
 	createAimLine();
-}, 500)
+}, 500);
 
 window.addEventListener(
 	"keydown",
@@ -103,7 +129,7 @@ window.addEventListener(
 			if (e.ctrlKey || e.metaKey) {
 				aimLine.renderable = true;
 			}
-		} catch { }
+		} catch {}
 	},
 	false,
 );
@@ -114,7 +140,7 @@ window.addEventListener(
 			if (!e.ctrlKey && !e.metaKey) {
 				aimLine.renderable = false;
 			}
-		} catch { }
+		} catch {}
 	},
 	false,
 );
