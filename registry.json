@@ -135,6 +135,14 @@
 			"author": "noam",
 			"file": "plugins/pearsaehify.js",
 			"version": "1"
+		},
+		{
+			"name": "Small minimap",
+			"id": "smallminimap",
+			"description": "Halfs the size of the in-game minimap",
+			"author": "pi",
+			"file": "plugins/smallminimap.js",
+			"version": "1"
 		}
 	],
 	"assetpacks": [
