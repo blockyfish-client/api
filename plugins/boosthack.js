@@ -94,10 +94,11 @@ window.addEventListener(
 							game.currentScene.myAnimal._visibleFishLevel,
 						)
 					) {
-						blockyfish.boost();
-						setTimeout(() => {
+						blockyfish.sendBoostPacket(blockyfish.ActionPacket.Boost);
+						// why would we need to put delay 
+						// setTimeout(() => {
 							blockyfish.chargedBoost();
-						}, 16);
+						// }, 16);
 					} else {
 						blockyfish.superJump();
 					}
