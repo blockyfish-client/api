@@ -86,19 +86,23 @@ window.addEventListener(
 window.addEventListener(
 	"click",
 	(e) => {
+		const { BeakedWhale, BelugaWhale, CoconutCrab, ThresherShark } =
+			blockyfish.Animals;
+		const lvl = game.currentScene.myAnimal._visibleFishLevel;
 		try {
 			if (ctrlKey) {
 				if (shiftKey) {
-					if (
-						[101, 107, 109].includes(
-							game.currentScene.myAnimal._visibleFishLevel,
-						)
-					) {
-						blockyfish.sendBoostPacket(blockyfish.ActionPacket.Boost);
-						// why would we need to put delay 
-						// setTimeout(() => {
-							blockyfish.chargedBoost();
-						// }, 16);
+					if ([ThresherShark, BeakedWhale, BelugaWhale].includes(lvl)) {
+						blockyfish.boost();
+						blockyfish.chargedBoost();
+					} else if (lvl === CoconutCrab) {
+						blockyfish.chargedBoost();
+						setTimeout(() => {
+							blockyfish.boost();
+						}, 45);
+						setTimeout(() => {
+							blockyfish.scalingBoost(41);
+						}, 90);
 					} else {
 						blockyfish.superJump();
 					}
