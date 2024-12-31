@@ -86,6 +86,8 @@ window.addEventListener(
 window.addEventListener(
 	"click",
 	(e) => {
+		if (game?.currentScene?.myAnimal == null) return;
+
 		const { BeakedWhale, BelugaWhale, CoconutCrab, ThresherShark } =
 			blockyfish.Animals;
 		const lvl = game.currentScene.myAnimal._visibleFishLevel;
