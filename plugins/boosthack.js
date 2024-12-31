@@ -95,7 +95,10 @@ window.addEventListener(
 					if ([ThresherShark, BeakedWhale, BelugaWhale].includes(lvl)) {
 						blockyfish.boost();
 						blockyfish.chargedBoost();
-					} else if (lvl === CoconutCrab) {
+					} else if (
+						lvl === CoconutCrab &&
+						game?.currentScene?.myAnimal?._standing
+					) {
 						blockyfish.chargedBoost();
 						setTimeout(() => {
 							blockyfish.boost();
