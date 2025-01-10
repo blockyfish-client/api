@@ -153,9 +153,9 @@
 		}
 	],
 	"themes": [],
-	"knownversions": ["c4717bdf", "39268b3b"],
+	"knownversions": ["a724d298", "c4717bdf", "39268b3b"],
 	"version": "4.2.1",
-	"showalphabutton": true,
+	"showalphabutton": false,
 	"logo": {
 		"animal1": "arapaima",
 		"animal2": "capybara",
@@ -166,5 +166,5 @@
 			"WebkitTextStroke": "0.5px #a5c953"
 		}
 	},
-	"css": ".home-bg {background-image: url('https://blockyfish-client.github.io/assets/dpbg7.png') !important;}"
+	"css": ".home-bg {background-image: url('https://blockyfish-client.github.io/assets/dpbg7.png') !important;} .home-intro {background:transparent !important; & .inner {background: rgba(17,24,39,0.4) !important;}}"
 }
