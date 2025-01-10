@@ -37,7 +37,8 @@ evowheelCss.innerHTML = `
 }`;
 document.querySelector("head").append(evowheelCss);
 
-const evowheelUrl = "https://blockyfish-client.github.io/assets/evo_circle.png";
+const evowheelUrl =
+	"https://blockyfish-client.github.io/assets/evo_circle.min.png";
 const createEvowheel = () => {
 	const evowheel = document.createElement("div");
 	document.querySelector("div.game").prepend(evowheel);

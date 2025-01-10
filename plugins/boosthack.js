@@ -1,11 +1,11 @@
 // @name Instant charged boost
 // @id boosthack
-// @description ctrl/cmd + click for full boost, alt + click for half boost, and ctrl/cmd + shift + click for super jump/thresher super boost
+// @description ctrl/cmd + click for full boost, alt + click for half boost, and ctrl/cmd + shift + click for super jump/coco combo/thresher super boost
 // @author pi
 
 const createOverlay = () => {
 	try {
-		document.getElementById("ctrl-overlay").remove();
+		document.getElementById("ctrl-overlay").parentElement.remove();
 	} catch {}
 
 	const overlay = document.createElement("div");
@@ -20,6 +20,7 @@ const createOverlay = () => {
 				display: "block",
 				zIndex: 10000,
 				pointerEvents: "none",
+				userSelect: "none",
 			}}
 		/>,
 	);
@@ -31,25 +32,12 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 	createOverlay();
 });
 
-const showCtrlOverlay = (e) => {
-	if (e.ctrlKey || e.metaKey || e.altKey) {
-		try {
-			if (game.currentScene != null) {
-				if (game.currentScene.myAnimal != null) {
-					if (game.currentScene.myAnimal._visibleFishLevel !== 101) {
-						document.getElementById("ctrl-overlay").style.pointerEvents = "all";
-					} else if (!e.shiftKey) {
-						if (game.currentScene.myAnimal._visibleFishLevel === 101)
-							document.getElementById("ctrl-overlay").style.pointerEvents =
-								"all";
-					} else {
-						document.getElementById("ctrl-overlay").style.pointerEvents =
-							"none";
-					}
-				}
-			}
-		} catch {}
-	}
+const showCtrlOverlay = () => {
+	try {
+		if (game?.currentScene?.myAnimal) {
+			document.getElementById("ctrl-overlay").style.pointerEvents = "all";
+		}
+	} catch {}
 };
 
 let ctrlKey = false;
@@ -59,7 +47,9 @@ window.addEventListener(
 	"keydown",
 	(e) => {
 		try {
-			showCtrlOverlay(e);
+			if (e.ctrlKey || e.metaKey || e.altKey) {
+				showCtrlOverlay(e);
+			}
 			if (e.ctrlKey || e.metaKey) {
 				ctrlKey = true;
 			}
@@ -96,26 +86,35 @@ window.addEventListener(
 window.addEventListener(
 	"click",
 	(e) => {
+		if (game?.currentScene?.myAnimal == null) return;
+
+		const { BeakedWhale, BelugaWhale, CoconutCrab, ThresherShark } =
+			blockyfish.Animals;
+		const lvl = game.currentScene.myAnimal._visibleFishLevel;
 		try {
 			if (ctrlKey) {
-				if (
-					shiftKey &&
-					[107, 109].includes(game.currentScene.myAnimal._visibleFishLevel)
-				) {
-					blockyfish.boost();
-					setTimeout(() => {
+				if (shiftKey) {
+					if ([ThresherShark, BeakedWhale, BelugaWhale].includes(lvl)) {
+						blockyfish.boost();
 						blockyfish.chargedBoost();
-					}, 30);
-				} else if (
-					shiftKey &&
-					game.currentScene.myAnimal._visibleFishLevel !== 101
-				) {
-					blockyfish.superJump();
+					} else if (
+						lvl === CoconutCrab &&
+						game?.currentScene?.myAnimal?._standing
+					) {
+						blockyfish.chargedBoost();
+						setTimeout(() => {
+							blockyfish.boost();
+						}, 45);
+						setTimeout(() => {
+							blockyfish.scalingBoost(41);
+						}, 90);
+					} else {
+						blockyfish.superJump();
+					}
 				} else {
 					blockyfish.chargedBoost();
 				}
-			}
-			if (altKey) {
+			} else if (altKey) {
 				blockyfish.halfChargedBoost();
 			}
 		} catch {}
@@ -125,5 +124,8 @@ window.addEventListener(
 window.addEventListener("focus", () => {
 	try {
 		document.getElementById("ctrl-overlay").style.pointerEvents = "none";
+		ctrlKey = false;
+		altKey = false;
+		shiftKey = false;
 	} catch {}
 });
