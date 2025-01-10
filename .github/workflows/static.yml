@@ -43,6 +43,10 @@ jobs:
       - name: Process files
         run: bun deploy.js
 
+      - name: Clean directory
+        run: |
+          rm -rf node_modules .github .gitignore announcements.md bun.lockb deploy.js package.json README.md
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
