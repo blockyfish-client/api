@@ -143,6 +143,14 @@
 			"author": "pi",
 			"file": "plugins/smallminimap.js",
 			"version": "1"
+		},
+		{
+			"name": "Fiddler godmode",
+			"id": "fiddlergodmodeop",
+			"description": "Press toggle godmode keybind to get godmode",
+			"author": "noam",
+			"file": "plugins/fiddler.js",
+			"version": "1"
 		}
 	],
 	"assetpacks": [
