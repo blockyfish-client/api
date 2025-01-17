@@ -5,15 +5,15 @@
 
 plugin.registerSetting({
 	name: "Delay (MS)",
-	description: "How long should delay between heals be (recommended 100)",
+	description: "How long should delay between heals be (recommended 200)",
 	type: "number",
-	defaultValue: 100
+	defaultValue: 200
 });
 plugin.registerSetting({
 	name: "Limit",
 	description: "At what amount of overhealth does it stop healing (Max over health is 3333, put over 3333 for no limit)",
 	type: "number",
-	defaultValue: 3333
+	defaultValue: 2500
 });
 plugin.registerKeybind("Toggle Godmode", "KeyQ")
 
