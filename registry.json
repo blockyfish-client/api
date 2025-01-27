@@ -6,7 +6,7 @@
 			"description": "Hold down ctrl/cmd to show a red aim line on some animals. Requires WebGL to be enabled.",
 			"author": "pi",
 			"file": "plugins/aimline.js",
-			"version": "1.3"
+			"version": "1.4"
 		},
 		{
 			"name": "Auto shake",
@@ -14,7 +14,7 @@
 			"description": "Press the shake keybind to toggle",
 			"author": "noam",
 			"file": "plugins/autoshake.js",
-			"version": "1.2"
+			"version": "1.3"
 		},
 		{
 			"name": "Auto spin",
@@ -22,7 +22,7 @@
 			"description": "Spin really fast without breaking your arms",
 			"author": "pi",
 			"file": "plugins/autospin.js",
-			"version": "1"
+			"version": "1.1"
 		},
 		{
 			"name": "Better vision",
@@ -30,7 +30,7 @@
 			"description": "No ink flash or deep darkness effects",
 			"author": "pi and noam",
 			"file": "plugins/bettervision.js",
-			"version": "1"
+			"version": "1.1"
 		},
 		{
 			"name": "Evolution tree wheel",
@@ -38,7 +38,7 @@
 			"description": "View an evolution tree for tiers 8 - 10",
 			"author": "pi",
 			"file": "plugins/evowheel.js",
-			"version": "1.1"
+			"version": "1.2"
 		},
 		{
 			"name": "Instant charged boost",
@@ -46,7 +46,7 @@
 			"description": "ctrl/cmd + click for full boost, alt + click for half boost, and ctrl/cmd + shift + click for super jump/coco combo/thresher super boost",
 			"author": "pi",
 			"file": "plugins/boosthack.js",
-			"version": "1.17"
+			"version": "1.18"
 		},
 		{
 			"name": "I see dead fish!",
@@ -54,7 +54,7 @@
 			"description": "Lets you see ghosts",
 			"author": "pi and noam",
 			"file": "plugins/iseedeadfish.js",
-			"version": "1"
+			"version": "1.1"
 		},
 		{
 			"name": "No camera clamp",
@@ -62,7 +62,7 @@
 			"description": "Camera position clamp is removed; your animal will always be centered on the screen",
 			"author": "pi",
 			"file": "plugins/nocameraclamp.js",
-			"version": "1"
+			"version": "1.1"
 		},
 		{
 			"name": "No invisible animals",
@@ -70,7 +70,7 @@
 			"description": "Makes invisible animals visible",
 			"author": "pi and noam",
 			"file": "plugins/noinvisibleanimals.js",
-			"version": "1.2"
+			"version": "1.3"
 		},
 		{
 			"name": "No zoom limit",
@@ -78,7 +78,7 @@
 			"description": "Zoom clamp is removed. You can zoom in or out as far as you want",
 			"author": "pi",
 			"file": "plugins/nozoomlimit.js",
-			"version": "1"
+			"version": "1.1"
 		},
 		{
 			"name": "Quick Disconnect",
@@ -86,7 +86,7 @@
 			"description": "Press ctrl/cmd + shift + Q to disconnect from any server",
 			"author": "pi",
 			"file": "plugins/quickdisconnect.js",
-			"version": "1.1"
+			"version": "1.2"
 		},
 		{
 			"name": "XRAY",
@@ -94,7 +94,7 @@
 			"description": "See underground caves and animals through terrain",
 			"author": "pi and noam",
 			"file": "plugins/xray.js",
-			"version": "1"
+			"version": "1.1"
 		},
 		{
 			"name": "Pearl defense double animal",
@@ -102,7 +102,7 @@
 			"description": "Press the options keybind to get all evolution options in pearl defense",
 			"author": "noam",
 			"file": "plugins/doubleanimal.js",
-			"version": "1"
+			"version": "1.1"
 		},
 		{
 			"name": "Reverse aim",
@@ -110,7 +110,7 @@
 			"description": "Automatically reverses movement on some animals",
 			"author": "noam",
 			"file": "plugins/reverseaim.js",
-			"version": "1.4"
+			"version": "1.5"
 		},
 		{
 			"name": "Autofill name",
@@ -118,7 +118,7 @@
 			"description": "Autofills name automatically",
 			"author": "noam",
 			"file": "plugins/autofill.js",
-			"version": "1.2"
+			"version": "1.3"
 		},
 		{
 			"name": "Autofill log-in",
@@ -126,7 +126,7 @@
 			"description": "Autofills username and password automatically",
 			"author": "pi",
 			"file": "plugins/loginautofill.js",
-			"version": "1"
+			"version": "1.1"
 		},
 		{
 			"name": "Black",
@@ -134,7 +134,7 @@
 			"description": "Lose all your rights and start getting a taste for koolaid kfc and watermelon",
 			"author": "noam",
 			"file": "plugins/pearsaehify.js",
-			"version": "1"
+			"version": "1.1"
 		},
 		{
 			"name": "Small minimap",
@@ -142,7 +142,7 @@
 			"description": "Halfs the size of the in-game minimap",
 			"author": "pi",
 			"file": "plugins/smallminimap.js",
-			"version": "1"
+			"version": "1.1"
 		},
 		{
 			"name": "Fiddler godmode",
@@ -150,7 +150,7 @@
 			"description": "Press toggle godmode keybind to get godmode",
 			"author": "noam",
 			"file": "plugins/fiddler.js",
-			"version": "1.1"
+			"version": "1.2"
 		}
 	],
 	"assetpacks": [
