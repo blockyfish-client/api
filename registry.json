@@ -151,6 +151,14 @@
 			"author": "noam",
 			"file": "plugins/fiddler.js",
 			"version": "1.2"
+		},
+		{
+			"name": "Custom background",
+			"id": "custombackground",
+			"description": "Lets you have a custom background image/gif",
+			"author": "noam",
+			"file": "plugins/custombackground.js",
+			"version": "1.0"
 		}
 	],
 	"assetpacks": [
