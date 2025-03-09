@@ -1,166 +1,86 @@
 {
-	"plugins": [
-		{
-			"name": "Aim line",
-			"id": "aimline",
-			"description": "Hold down ctrl/cmd to show a red aim line on some animals. Requires WebGL to be enabled.",
-			"author": "pi",
+	"pluginsMetadata": {
+		"aimline": {
 			"file": "plugins/aimline.js",
 			"version": "1.4"
 		},
-		{
-			"name": "Auto shake",
-			"id": "autoshake",
-			"description": "Press the shake keybind to toggle",
-			"author": "noam",
+		"autoshake": {
 			"file": "plugins/autoshake.js",
 			"version": "1.3"
 		},
-		{
-			"name": "Auto spin",
-			"id": "autospin",
-			"description": "Spin really fast without breaking your arms",
-			"author": "pi",
+		"autospin": {
 			"file": "plugins/autospin.js",
 			"version": "1.1"
 		},
-		{
-			"name": "Better vision",
-			"id": "bettervision",
-			"description": "No ink flash or deep darkness effects",
-			"author": "pi and noam",
+		"bettervision": {
 			"file": "plugins/bettervision.js",
 			"version": "1.1"
 		},
-		{
-			"name": "Evolution tree wheel",
-			"id": "evowheel",
-			"description": "View an evolution tree for tiers 8 - 10",
-			"author": "pi",
+		"evowheel": {
 			"file": "plugins/evowheel.js",
 			"version": "1.2"
 		},
-		{
-			"name": "Instant charged boost",
-			"id": "boosthack",
-			"description": "ctrl/cmd + click for full boost, alt + click for half boost, and ctrl/cmd + shift + click for super jump/coco combo/thresher super boost",
-			"author": "pi",
+		"boosthack": {
 			"file": "plugins/boosthack.js",
 			"version": "1.18"
 		},
-		{
-			"name": "I see dead fish!",
-			"id": "iseedeadfish",
-			"description": "Lets you see ghosts",
-			"author": "pi and noam",
+		"iseedeadfish": {
 			"file": "plugins/iseedeadfish.js",
 			"version": "1.1"
 		},
-		{
-			"name": "No camera clamp",
-			"id": "nocameraclamp",
-			"description": "Camera position clamp is removed; your animal will always be centered on the screen",
-			"author": "pi",
+		"nocameraclamp": {
 			"file": "plugins/nocameraclamp.js",
 			"version": "1.1"
 		},
-		{
-			"name": "No invisible animals",
-			"id": "noinvisibleanimals",
-			"description": "Makes invisible animals visible",
-			"author": "pi and noam",
+		"noinvisibleanimals": {
 			"file": "plugins/noinvisibleanimals.js",
 			"version": "1.3"
 		},
-		{
-			"name": "No zoom limit",
-			"id": "nozoomlimit",
-			"description": "Zoom clamp is removed. You can zoom in or out as far as you want",
-			"author": "pi",
+		"nozoomlimit": {
 			"file": "plugins/nozoomlimit.js",
 			"version": "1.1"
 		},
-		{
-			"name": "Quick Disconnect",
-			"id": "quickdisconnect",
-			"description": "Press ctrl/cmd + shift + Q to disconnect from any server",
-			"author": "pi",
+		"quickdisconnect": {
 			"file": "plugins/quickdisconnect.js",
 			"version": "1.2"
 		},
-		{
-			"name": "XRAY",
-			"id": "xray",
-			"description": "See underground caves and animals through terrain",
-			"author": "pi and noam",
+		"xray": {
 			"file": "plugins/xray.js",
 			"version": "1.1"
 		},
-		{
-			"name": "Pearl defense double animal",
-			"id": "pddoubleanimal",
-			"description": "Press the options keybind to get all evolution options in pearl defense",
-			"author": "noam",
+		"pddoubleanimal": {
 			"file": "plugins/doubleanimal.js",
 			"version": "1.1"
 		},
-		{
-			"name": "Reverse aim",
-			"id": "reverseaim",
-			"description": "Automatically reverses movement on some animals",
-			"author": "noam",
+		"reverseaim": {
 			"file": "plugins/reverseaim.js",
 			"version": "1.5"
 		},
-		{
-			"name": "Autofill name",
-			"id": "autofill",
-			"description": "Autofills name automatically",
-			"author": "noam",
+		"autofill": {
 			"file": "plugins/autofill.js",
 			"version": "1.3"
 		},
-		{
-			"name": "Autofill log-in",
-			"id": "loginautofill",
-			"description": "Autofills username and password automatically",
-			"author": "pi",
+		"loginautofill": {
 			"file": "plugins/loginautofill.js",
 			"version": "1.1"
 		},
-		{
-			"name": "Black",
-			"id": "pearsaehify",
-			"description": "Lose all your rights and start getting a taste for koolaid kfc and watermelon",
-			"author": "noam",
+		"pearsaehify": {
 			"file": "plugins/pearsaehify.js",
 			"version": "1.1"
 		},
-		{
-			"name": "Small minimap",
-			"id": "smallminimap",
-			"description": "Halfs the size of the in-game minimap",
-			"author": "pi",
+		"smallminimap": {
 			"file": "plugins/smallminimap.js",
 			"version": "1.1"
 		},
-		{
-			"name": "Fiddler godmode",
-			"id": "fiddlergodmodeop",
-			"description": "Press toggle godmode keybind to get godmode",
-			"author": "noam",
+		"fiddlergodmodeop": {
 			"file": "plugins/fiddler.js",
 			"version": "1.2"
 		},
-		{
-			"name": "Custom background",
-			"id": "custombackground",
-			"description": "Lets you have a custom background image/gif",
-			"author": "noam",
+		"custombackground": {
 			"file": "plugins/custombackground.js",
 			"version": "1.0"
 		}
-	],
+	},
 	"assetpacks": [
 		{
 			"name": "Doc Assets",
