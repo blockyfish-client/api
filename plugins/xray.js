@@ -2,6 +2,7 @@
 // @id xray
 // @description See underground cave and animals through terrain
 // @author pi and noam
+// @tags visual, gameplay, client-side
 
 let game;
 setInterval(() => {

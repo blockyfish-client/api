@@ -2,6 +2,7 @@
 // @id bettervision
 // @description No ink flash or deep darkness effects
 // @author pi and noam
+// @tags visual, gameplay, client-side
 
 blockyfish.addEventListener("gameInit", ({ game }) => {
 	game.currentScene.setFlash = () => {}; // who tf changed this

@@ -2,6 +2,7 @@
 // @id autofill
 // @description Autofills name automatically
 // @author noam
+// @tags utility, client-side
 
 let nameval = plugin.storage.get("Autofill Name") || "";
 let inp = document.querySelector(".name-input input");

@@ -2,6 +2,7 @@
 // @id aimline
 // @description Hold down ctrl/cmd to show a red aim line on some animals. Requires WebGL to be enabled.
 // @author pi
+// @tags visual, gameplay, client-side
 
 const geometry = new PIXI.Geometry()
 	.addAttribute(

@@ -2,6 +2,7 @@
 // @id evowheel
 // @description View an evolution tree for tiers 8 - 10
 // @author pi
+// @tags utility, client-side
 
 plugin.registerKeybind("Show evo wheel", "KeyY");
 

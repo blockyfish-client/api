@@ -2,6 +2,7 @@
 // @id autoshake
 // @description Press the shake keybind to toggle
 // @author noam
+// @tags gameplay, server-side
 
 plugin.registerKeybind("Shake", "KeyV");
 

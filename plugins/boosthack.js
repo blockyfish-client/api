@@ -2,6 +2,7 @@
 // @id boosthack
 // @description ctrl/cmd + click for full boost, alt + click for half boost, and ctrl/cmd + shift + click for super jump/coco combo/thresher super boost
 // @author pi
+// @tags gameplay, server-side
 
 const createOverlay = () => {
 	try {

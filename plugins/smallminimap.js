@@ -2,6 +2,7 @@
 // @id smallminimap
 // @description Halfs the size of the in-game minimap
 // @author Pi
+// @tags visual, theming, client-side
 
 let game;
 

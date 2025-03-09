@@ -2,6 +2,7 @@
 // @id quickdisconnect
 // @description Press ctrl/cmd + shift + Q to disconnect from any server
 // @author pi
+// @tags utility
 
 plugin.registerKeybind("Disconnect", "KeyQ");
 

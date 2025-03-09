@@ -2,6 +2,7 @@
 // @id autospin
 // @description Spin really fast without breaking your arms
 // @author pi
+// @tags gameplay, server-side
 
 plugin.registerKeybind("Spin", "KeyZ");
 

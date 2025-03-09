@@ -2,6 +2,7 @@
 // @id loginautofill
 // @description Autofills username and password automatically
 // @author pi
+// @tags utility, client-side
 
 let uval = plugin.storage.get("Autofill Username") || "";
 let pval = plugin.storage.get("Autofill Password") || "";

@@ -2,6 +2,7 @@
 // @id nocameraclamp
 // @description Camera position clamp is removed; your animal will always be centered on the screen
 // @author pi
+// @tags visual, gameplay, client-side
 
 let game;
 blockyfish.addEventListener("gameInit", ({ game: _game }) => {

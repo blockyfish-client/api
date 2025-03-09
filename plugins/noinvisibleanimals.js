@@ -2,6 +2,7 @@
 // @id noinvisibleanimals
 // @description Makes invisible animals visible
 // @author pi and noam
+// @tags visual, gameplay, client-side
 
 let game;
 blockyfish.addEventListener("gameInit", ({ game: _game }) => {
