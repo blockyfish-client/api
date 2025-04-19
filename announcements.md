@@ -4,6 +4,16 @@ Fede banned some people today (Apr. 18, 2025) for hacking. At this time, there d
 
 ---
 
+### v4.3.2
+
+- Plugins can now a save file and take a screenshot
+- Plugins can now access `Buffer`
+- Plugins can now access the Vue.js router
+- Added Blockyfish announcements
+- Improved performance on settings page
+
+---
+
 ### v4.3.1
 
 - Added tags to plugins
