@@ -1,6 +1,8 @@
 ### Client bans
 
-Fede banned some people today (Apr. 18, 2025) for hacking. At this time, there doesn't seem to be any automated system that bans players for hacking. Fede banned people who were reported in Deepcord's client report channel manually.
+Fede banned some people today (Apr. 18, 2025) for hacking. At this time, there doesn't seem to be any automated system that bans players for hacking. Fede banned people who were reported in Deepcord's client report channel manually
+
+---
 
 ### v4.3.1
 
@@ -8,15 +10,21 @@ Fede banned some people today (Apr. 18, 2025) for hacking. At this time, there d
 - Fixed a bug with enabling/disabling plugins
 - Updated to Electron v35 (Chrome v134); Google sign-in user agent set to Firefox v137
 
+---
+
 ### v4.3.0
 
 - Removed safeStorage to avoid decryption bugs in certain circumstances on Linux
 - Fixed a bug where external links would not be opened in the default browser and instead be opened as a new window in the Electron app
 - Fixed UI bugs where the titlebar buttons would interfere with important in-game buttons
 
+---
+
 ### v4.2.5
 
 - Fixed a disastrous typo that destroyed the world in 4.2.3/4.2.4
+
+---
 
 ### v4.2.4
 
@@ -24,11 +32,15 @@ Fede banned some people today (Apr. 18, 2025) for hacking. At this time, there d
 - Patched Google Sign-in's Electron detection
 - Plugin list now reloads as soon as plugins are loaded
 
+---
+
 ### v4.2.3
 
 - Optimized plugin load time
 - Optimized client load time
 - Fixed socket manager bug
+
+---
 
 ### v4.2.2
 
@@ -38,9 +50,13 @@ Fede banned some people today (Apr. 18, 2025) for hacking. At this time, there d
 - Fixed boost packet bug
 - Fixed custom keybinds not saving
 
+---
+
 ### v4.2.1
 
 - Fixed boost hack (beaked whale bubble)
+
+---
 
 ### v4.2.0
 
@@ -48,10 +64,14 @@ Fede banned some people today (Apr. 18, 2025) for hacking. At this time, there d
 - Fixed bug with custom asset pack
 - Added plugin settings
 
+---
+
 ### v4.1.7
 
 - Improved performance
 - Fixed bug with boosting
+
+---
 
 ### v4.1.6
 
@@ -59,6 +79,8 @@ Fede banned some people today (Apr. 18, 2025) for hacking. At this time, there d
 
 - Patched possible detection methods
 - Disabled background throttling
+
+---
 
 ### v4.1.5
 
@@ -70,6 +92,8 @@ Fede banned some people today (Apr. 18, 2025) for hacking. At this time, there d
 #### Features
 
 - Patched adsbygoogle module to fix frozen respawn screen
+
+---
 
 ### v4.1.4
 
@@ -83,6 +107,8 @@ Fede banned some people today (Apr. 18, 2025) for hacking. At this time, there d
 
 - Removed beaked whale bubble cooldown
 - Allow ctrl/cmd +/- to change zoom
+
+---
 
 ### v4.1.3
 
