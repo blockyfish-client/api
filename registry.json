@@ -82,7 +82,7 @@
 		},
 		"escapecharacters": {
 			"file": "plugins/escapecharacters.js",
-			"version": "1.0"	
+			"version": "1.1"	
 		}
 	},
 	"assetpacks": [
