@@ -79,6 +79,10 @@
 		"custombackground": {
 			"file": "plugins/custombackground.js",
 			"version": "1.0"
+		},
+		"escapecharacters": {
+			"file": "plugins/escapecharacters.js",
+			"version": "1.0"	
 		}
 	},
 	"assetpacks": [
