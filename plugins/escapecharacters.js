@@ -5,7 +5,7 @@
 
 function unescapeString(input) {
     if (typeof input !== "string") return input;
-    return input.replace(/\\(\\|n|r|t|b|f|v|\d+|x([\daAbBcCdDeEfF]{2})|u([\daAbBcCdDeEfF]{4})|u\{(0*[\daAbBcCdDeEfF]{1,6})\})/g, (match, sequence, hex, unicode, codepoint) => {
+    return input.replace(/\\(\\|n|r|t|b|f|v|\d+|x([\da-fA-F]{2})|u([\da-fA-F]{4})|u\{(0*[\da-fA-F]{1,6})\})/g, (match, sequence, hex, unicode, codepoint) => {
         switch (sequence[0]) {
             case "\\": return "\\";
             case "n": return "\n";
