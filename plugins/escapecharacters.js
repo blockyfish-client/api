@@ -18,11 +18,11 @@ function unescapeString(input) {
                 return String.fromCharCode(parseInt(sequence, 8) || 0);
             default:
                 if (hex != null) {
-                    return String.fromCharCode(parseInt(hex, 16))
+                    return String.fromCharCode(parseInt(hex, 16) || 0)
                 } else if (unicode != null) {
-                    return String.fromCharCode(parseInt(unicode, 16));
+                    return String.fromCharCode(parseInt(unicode, 16) || 0);
                 } else if (codepoint != null) {
-                    const val = parseInt(codepoint, 16);
+                    const val = parseInt(codepoint, 16) || 0;
                     return val > 0x10FFFF ? match : String.fromCharCode(val)
                 }
                 return sequence
