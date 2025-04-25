@@ -90,13 +90,17 @@ hook(TextEncoder.prototype, "encode", {
 	},
 });
 
-setInterval(() => {
-	try {
-		document.querySelectorAll(".el-input__inner").forEach((v) => {
-			v.maxLength = 1000;
-		});
-		document
-			.querySelector(".chat-input input")
-			?.setAttribute("maxLength", 1000);
-	} catch (e) {}
-}, 10);
+const observer = new MutationObserver(() => {
+	// name input
+	document
+		.querySelector(".play-game .el-input__inner")
+		?.setAttribute("maxlength", "80");
+	// tribe name input
+	document
+		.querySelector(".new-tribe .el-input__inner")
+		?.setAttribute("maxlength", "20");
+	// chat
+	document.querySelector(".chat-input input")?.setAttribute("maxLength", 1000);
+});
+
+observer.observe(document.body, { childList: true, subtree: true });
