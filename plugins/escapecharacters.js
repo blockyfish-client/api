@@ -1,6 +1,6 @@
 // @name Escape characters
 // @id escapecharacters
-// @description Be able to use escape character in name, tribe and chat
+// @description Be able to use escape character in name, tribe, and chat
 // @author noam
 
 function unescapeString(input) {
