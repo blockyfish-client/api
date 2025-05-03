@@ -98,13 +98,7 @@
 	"showalphabutton": false,
 	"logo": {
 		"animal1": "arapaima",
-		"animal2": "capybara",
-		"customTextStyles": {
-			"background": "linear-gradient(0deg, rgba(49,154,55,1) 0%, rgba(112,183,63,1) 100%)",
-			"backgroundClip": "text",
-			"color": "transparent",
-			"WebkitTextStroke": "0.5px #a5c953"
-		}
+		"animal2": "capybara"
 	},
 	"css": ".home-bg {background-image: url('https://blockyfish-client.github.io/assets/dpbg7.png') !important;} .home-intro {background:transparent !important; & .inner {background: rgba(17,24,39,0.4) !important;}}"
 }
