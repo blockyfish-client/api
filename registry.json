@@ -83,6 +83,10 @@
 		"escapecharacters": {
 			"file": "plugins/escapecharacters.js",
 			"version": "1.2"
+		},
+		"showroomid": {
+			"file": "plugins/showroomid.js",
+			"version": "1.0"
 		}
 	},
 	"assetpacks": [
