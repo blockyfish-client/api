@@ -87,6 +87,10 @@
 		"showroomid": {
 			"file": "plugins/showroomid.js",
 			"version": "1.0"
+		},
+		"hideboosttrail": {
+			"file": "plugins/hideboosttrail.js",
+			"version": "1.0"
 		}
 	},
 	"assetpacks": [
