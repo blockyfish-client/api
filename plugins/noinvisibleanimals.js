@@ -14,7 +14,12 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 setInterval(() => {
 	try {
 		if (game == null || game.currentScene == null) return;
-		for (const animal of game.currentScene.entityManager.animalsList) {
+		for (
+			let i = 0;
+			i < game.currentScene.entityManager.animalsList.length;
+			i++
+		) {
+			const animal = game.currentScene.entityManager.animalsList[i];
 			if (animal.alpha < 0.5) {
 				animal.alpha = 0.5;
 			}
@@ -25,8 +30,7 @@ setInterval(() => {
 				animal.relatedObjects.visible = true;
 			}
 
-			// the following tweaks shouldn't apply to AIs
-			if (AIs.includes(animal.visibleFishLevel)) continue;
+			if (AIs.includes(animal.fishLevelData.fishLevel)) continue;
 			if (animal.nameObject.visible !== true) {
 				animal.nameObject.visible = true;
 			}

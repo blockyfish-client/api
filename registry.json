@@ -34,7 +34,7 @@
 		},
 		"noinvisibleanimals": {
 			"file": "plugins/noinvisibleanimals.js",
-			"version": "1.6"
+			"version": "1.7"
 		},
 		"nozoomlimit": {
 			"file": "plugins/nozoomlimit.js",
