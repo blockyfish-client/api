@@ -26,7 +26,7 @@ setInterval(() => {
 			}
 
 			// the following tweaks shouldn't apply to AIs
-			if (animal.visibleFishLevel) continue;
+			if (AIs.includes(animal.visibleFishLevel)) continue;
 			if (animal.nameObject.visible !== true) {
 				animal.nameObject.visible = true;
 			}
