@@ -4,6 +4,8 @@
 // @author pi and noam
 // @tags visual, gameplay, client-side
 
+const AIs = [18, 29, 44, 47, 52, 67, 77, 88, 118];
+
 let game;
 blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 	game = _game;
@@ -30,6 +32,10 @@ setInterval(() => {
 				game.currentScene.entityManager.animalsList[i].relatedObjects.visible =
 					true;
 			}
+
+			// the following tweaks shouldn't apply to AIs
+			if (game.currentScene.entityManager.animalsList[i].visibleFishLevel)
+				continue;
 			if (
 				game.currentScene.entityManager.animalsList[i].nameObject.visible !==
 				true
