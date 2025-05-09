@@ -14,34 +14,21 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 setInterval(() => {
 	try {
 		if (game == null || game.currentScene == null) return;
-		for (
-			let i = 0;
-			i < game.currentScene.entityManager.animalsList.length;
-			i++
-		) {
-			if (game.currentScene.entityManager.animalsList[i].alpha < 0.5) {
-				game.currentScene.entityManager.animalsList[i].alpha = 0.5;
+		for (const animal of game.currentScene.entityManager.animalsList) {
+			if (animal.alpha < 0.5) {
+				animal.alpha = 0.5;
 			}
-			if (game.currentScene.entityManager.animalsList[i].inner.alpha < 0.5) {
-				game.currentScene.entityManager.animalsList[i].inner.alpha = 0.5;
+			if (animal.inner.alpha < 0.5) {
+				animal.inner.alpha = 0.5;
 			}
-			if (
-				game.currentScene.entityManager.animalsList[i].relatedObjects
-					.visible !== true
-			) {
-				game.currentScene.entityManager.animalsList[i].relatedObjects.visible =
-					true;
+			if (animal.relatedObjects.visible !== true) {
+				animal.relatedObjects.visible = true;
 			}
 
 			// the following tweaks shouldn't apply to AIs
-			if (game.currentScene.entityManager.animalsList[i].visibleFishLevel)
-				continue;
-			if (
-				game.currentScene.entityManager.animalsList[i].nameObject.visible !==
-				true
-			) {
-				game.currentScene.entityManager.animalsList[i].nameObject.visible =
-					true;
+			if (animal.visibleFishLevel) continue;
+			if (animal.nameObject.visible !== true) {
+				animal.nameObject.visible = true;
 			}
 		}
 	} catch {}
