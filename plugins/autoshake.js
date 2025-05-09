@@ -9,7 +9,7 @@ plugin.registerKeybind("Shake", "KeyV");
 plugin.registerSetting({
 	name: "Auto enable",
 	description:
-		"Enables autoshake when attacked by anaconda, cookiecutter shark, snake, or wolfeel",
+		"Enables autoshake when attacked by cookiecutter shark, snake, or wolfeel",
 	type: "boolean",
 	defaultValue: true,
 });
@@ -53,7 +53,7 @@ const setEnabled = (enabled) => {
 	return;
 };
 
-const { Anaconda, CookiecutterShark, Snake, WolfEel } = blockyfish.Animals;
+const { CookiecutterShark, Snake, WolfEel } = blockyfish.Animals;
 setInterval(() => {
 	if (
 		game?.currentScene?.myAnimal == null ||
