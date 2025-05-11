@@ -25,9 +25,9 @@ setInterval(() => {
 			i++
 		) {
 			const animal = game.currentScene.entityManager.animalsList[i];
+			if (animal.nameObject.text.includes(tag)) continue;
 			animal.nameObject.textStyles[tag] = style;
-
-			animal.nameObject.text = `${animal.entityName} <${tag}>[${animal.playerRoomId}]</${tag}>`;
+			animal.nameObject.text = `${animal.nameObject.text} <${tag}>[${animal.playerRoomId}]</${tag}>`;
 		}
 	} catch {}
 }, 200);
