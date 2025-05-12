@@ -1,3 +1,13 @@
+### An update on client bans
+
+**This is pure speculation!**  
+It appears that Fede is only banning client users who are on the daily leaderboard with an animal that can be heaviliy abused with hacks (e.g. goblin shark, beaked whale, etc.). Your chances of getting banned will be lower if:
+
+1. You are not on the daily leaderboard
+2. You are not using an animal that can be heavily abused with hacks
+
+---
+
 ### Client bans
 
 Fede banned some people today (Apr. 18, 2025) for hacking. At this time, there doesn't seem to be any automated system that bans players for hacking. Fede banned people who were reported in Deepcord's client report channel manually
