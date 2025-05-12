@@ -50,8 +50,9 @@ function unescapeString(input) {
 }
 
 const SPAWN = 0;
-const TRIBE = 1;
-const CHAT = 2;
+const RESPAWN = 1;
+const TRIBE = 2;
+const CHAT = 3;
 const limits = {
 	spawn: 22,
 	createTribe: 5,
@@ -62,10 +63,12 @@ hook(TextEncoder.prototype, "encode", {
 	apply(f, th, args) {
 		try {
 			const spawn = /^(\x14{3}\d+\|6\|)(.+)$/gm;
+			const respawn = /^(\x14{3}\d+\|8\|)(.+)$/gm;
 			const tribe = /^(\x14{3}\d+\|14\|)(.+)$/gm;
 			const chat = /^(\x13{3}[01])(.+)$/gm;
 			const resArr = [
 				spawn.exec(args[0]),
+				respawn.exec(args[0]),
 				tribe.exec(args[0]),
 				chat.exec(args[0]),
 			];
@@ -74,6 +77,7 @@ hook(TextEncoder.prototype, "encode", {
 			if (res != null && res.length == 3) {
 				switch (msgType) {
 					case SPAWN:
+					case RESPAWN:
 						args[0] = res[1] + unescapeString(res[2]).substr(0, limits.spawn);
 						break;
 					case TRIBE:
