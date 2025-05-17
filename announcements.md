@@ -14,6 +14,19 @@ Fede banned some people today (Apr. 18, 2025) for hacking. At this time, there d
 
 ---
 
+### v4.3.3
+
+- Added experimental packet decoder and interceptor for plugins
+- Fixed a bug where the window would not be properly fullscreened on Windows, causing a thin border and rounded corners to be visible
+- Fixed a bug where the window could not be moved in MacOS
+- Fixed a bug where the Linux app could be falsely detected to be using GTK4
+- Fixed a bug where checkboxes would momentarily appear as checked upon opening Blockyfish settings
+- Fixed a bug where title bar control buttons on Windows and Linux would not appear, making it difficult to close the window
+- Optimized performance on Windows; removed background throttling when the window isn't focused
+- Updated to Electron v36 (Chrome v136)
+
+---
+
 ### v4.3.2
 
 - Plugins can now a save file and take a screenshot
