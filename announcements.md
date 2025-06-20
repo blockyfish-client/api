@@ -14,6 +14,20 @@ Fede banned some people today (Apr. 18, 2025) for hacking. At this time, there d
 
 ---
 
+### v4.3.4
+
+- Added an option in settings to keep Blockyfish running in the background for faster load time
+- Optimized initialization time of Blockyfish components
+- Plugins are now compiled and loaded in parallel
+- Fixed an issue where the overlay showing the current zoom level would also scale with the page's zoom level
+- Fixed an issue where titlebar buttons would scale with the page's zoom level
+- Fixed an issue where UI elements were not moved properly to avoid conflicting with titlebar buttons on MacOS
+- Fixed an issue where the Vue injector could fail due to a race condition
+- Fixed various layout bugs
+- Google sign-in user agent set to Firefox v138
+
+---
+
 ### v4.3.3
 
 - Added experimental packet decoder and interceptor for plugins
