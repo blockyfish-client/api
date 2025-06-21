@@ -14,6 +14,12 @@ Fede banned some people today (Apr. 18, 2025) for hacking. At this time, there d
 
 ---
 
+### v4.3.5
+
+- Fixed an issue where errors would be displayed when attempting to quit Blockyfish
+
+---
+
 ### v4.3.4
 
 - Added an option in settings to keep Blockyfish running in the background for faster load time
