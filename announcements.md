@@ -14,6 +14,14 @@ Fede banned some people today (Apr. 18, 2025) for hacking. At this time, there d
 
 ---
 
+### v4.3.6
+
+- Removed packet interceptor
+- Fixed an issue where Blockyfish would not load properly
+- Optimized load time
+
+---
+
 ### v4.3.5
 
 - Fixed an issue where errors would be displayed when attempting to quit Blockyfish
