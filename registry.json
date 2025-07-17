@@ -18,11 +18,11 @@
 		},
 		"evowheel": {
 			"file": "plugins/evowheel.js",
-			"version": "1.2"
+			"version": "1.21"
 		},
 		"boosthack": {
 			"file": "plugins/boosthack.js",
-			"version": "1.18"
+			"version": "1.19"
 		},
 		"iseedeadfish": {
 			"file": "plugins/iseedeadfish.js",
