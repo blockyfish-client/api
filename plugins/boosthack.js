@@ -11,7 +11,7 @@ const createOverlay = () => {
 
 	const overlay = document.createElement("div");
 	document.querySelector("div.game").prepend(overlay);
-	ReactDOM.createRoot(overlay).render(
+	React.createRoot(overlay).render(
 		<div
 			id="ctrl-overlay"
 			style={{
