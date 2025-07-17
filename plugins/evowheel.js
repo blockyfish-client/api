@@ -43,7 +43,7 @@ const evowheelUrl =
 const createEvowheel = () => {
 	const evowheel = document.createElement("div");
 	document.querySelector("div.game").prepend(evowheel);
-	ReactDOM.createRoot(evowheel).render(
+	React.createRoot(evowheel).render(
 		<img src={evowheelUrl} draggable="false" className="evowheel" alt="" />,
 	);
 };
