@@ -7,11 +7,11 @@
 const createOverlay = () => {
 	try {
 		document.getElementById("ctrl-overlay").parentElement.remove();
-	} catch {}
+	} catch { }
 
 	const overlay = document.createElement("div");
 	document.querySelector("div.game").prepend(overlay);
-	React.createRoot(overlay).render(
+	ReactDOM.createRoot(overlay).render(
 		<div
 			id="ctrl-overlay"
 			style={{
@@ -38,7 +38,7 @@ const showCtrlOverlay = () => {
 		if (game?.currentScene?.myAnimal) {
 			document.getElementById("ctrl-overlay").style.pointerEvents = "all";
 		}
-	} catch {}
+	} catch { }
 };
 
 let ctrlKey = false;
@@ -60,7 +60,7 @@ window.addEventListener(
 			if (e.shiftKey) {
 				shiftKey = true;
 			}
-		} catch {}
+		} catch { }
 	},
 	false,
 );
@@ -80,7 +80,7 @@ window.addEventListener(
 			if (!e.shiftKey) {
 				shiftKey = false;
 			}
-		} catch {}
+		} catch { }
 	},
 	false,
 );
@@ -118,7 +118,7 @@ window.addEventListener(
 			} else if (altKey) {
 				blockyfish.halfChargedBoost();
 			}
-		} catch {}
+		} catch { }
 	},
 	false,
 );
@@ -128,5 +128,5 @@ window.addEventListener("focus", () => {
 		ctrlKey = false;
 		altKey = false;
 		shiftKey = false;
-	} catch {}
+	} catch { }
 });
