@@ -91,6 +91,10 @@
 		"hideboosttrail": {
 			"file": "plugins/hideboosttrail.js",
 			"version": "1.0"
+		},
+    "v3ui": {
+			"file": "plugins/v3ui.js",
+			"version": "1.0"
 		}
 	},
 	"assetpacks": [
