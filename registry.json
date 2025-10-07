@@ -92,12 +92,16 @@
 			"file": "plugins/hideboosttrail.js",
 			"version": "1.0"
 		},
-    "v3ui": {
+		"v3ui": {
 			"file": "plugins/v3ui.js",
 			"version": "1.0"
 		},
-    "animatedmeters": {
+		"animatedmeters": {
 			"file": "plugins/animatedmeters.js",
+			"version": "1.0"
+		},
+		"bypasschatfilter": {
+			"file": "plugin/bypasschatfilter.js",
 			"version": "1.0"
 		}
 	},
