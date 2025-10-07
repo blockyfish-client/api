@@ -1,5 +1,5 @@
 // @name Bypass chat filter
-// @id bypasschat
+// @id bypasschatfilter
 // @description Automatically bypasses the chat filter
 // @author noam
 // @tags utility
