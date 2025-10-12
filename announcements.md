@@ -1,3 +1,13 @@
+### v4.3.7
+
+- Optimized asset swapper
+- Optimized load time
+- Fixed a bug where Blockyfish may not load if Deeeep.io's API has high latency
+- Updated to Electron v38
+- Google sign-in user agent set to Firefox v140
+
+---
+
 ### An update on client bans
 
 **This is pure speculation!**  
