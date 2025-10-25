@@ -1,3 +1,9 @@
+### v4.3.8
+
+- Fixed plugin editor bugs
+
+---
+
 ### v4.3.7
 
 - Optimized asset swapper
