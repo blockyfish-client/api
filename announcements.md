@@ -1,3 +1,17 @@
+### v4.4.1
+
+- Fixed a bug where Blockyfish would not load properly if Deeeep.io loaded faster than data from the Blockyfish API
+- Updated to Electron v41
+- Google sign-in user agent set to Firefox v150
+
+---
+
+### v4.4.0
+
+- Fixed property name decoding
+
+---
+
 ### v4.3.8
 
 - Fixed plugin editor bugs
