@@ -77,7 +77,8 @@ setInterval(() => {
 		ppos._x + Math.cos(angleRadians) * incr,
 		ppos._y + Math.sin(angleRadians) * incr,
 	];
-	game.socketManager.sendBytePacket(formMovePacket(bpos[0], bpos[1], 100));
+	game.inputManager.sendMoveToXY(...bpos, 10000);
+	//game.socketManager.sendBytePacket(formMovePacket(bpos[0], bpos[1], 100));
 	FORWARD = !FORWARD;
 }, 100);
 
