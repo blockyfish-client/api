@@ -1,9 +1,3 @@
-### v4.4.2
-
-- Fixed property name decoding
-- Fixed `game.currentScene.myAnimal`
-- Removed home page promotional links (Miniapps AI and .io games)
-
 ### v4.4.1
 
 - Fixed a bug where Blockyfish would not load properly if Deeeep.io loaded faster than data from the Blockyfish API
