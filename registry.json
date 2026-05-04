@@ -6,7 +6,7 @@
 		},
 		"autoshake": {
 			"file": "plugins/autoshake.js",
-			"version": "1.5"
+			"version": "1.6"
 		},
 		"autospin": {
 			"file": "plugins/autospin.js",
@@ -54,7 +54,7 @@
 		},
 		"reverseaim": {
 			"file": "plugins/reverseaim.js",
-			"version": "1.5"
+			"version": "1.6"
 		},
 		"autofill": {
 			"file": "plugins/autofill.js",
