@@ -8,8 +8,8 @@ let game;
 let reverse = false;
 blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 	game = _game;
-	if (!ishooked(game.inputManager.raw_getMouseWorldPosition)) {
-		hook(game.inputManager, game.inputManager.key_getMouseWorldPosition, {
+	if (!ishooked(game.inputManager.getMouseWorldPosition)) {
+		hook(game.inputManager, "getMouseWorldPosition", {
 			apply(f, th, args) {
 				if (
 					!reverse ||
