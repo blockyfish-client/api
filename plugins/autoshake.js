@@ -53,7 +53,7 @@ const setEnabled = (enabled) => {
 	return;
 };
 
-const { CookiecutterShark, Snake, WolfEel } = blockyfish.Animals;
+const { Anaconda, CookiecutterShark, Snake, WolfEel } = blockyfish.Animals;
 setInterval(() => {
 	if (
 		game?.currentScene?.myAnimal == null ||
