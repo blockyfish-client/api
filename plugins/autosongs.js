@@ -41,13 +41,18 @@ for (const i in SONGS) {
 	plugin.registerKeybind(SONGS[i].name, `Digit${+i + 1}`);
 }
 
+let keyMap;
+const _keyMap = navigator.keyboard.getLayoutMap();
+(async () => {
+	keyMap = await _keyMap;
+})();
+
 const createUi = async () => {
 	try {
-		document.getElementById("humpback-ui").remove();
+		document.getElementById("humpback-ui").parentElement.remove();
 	} catch {}
 
 	const container = document.createElement("div");
-	container.id = "humpback-ui";
 	let targetInsertion = document.querySelector(".stats .middle");
 	if (!targetInsertion) {
 		await new Promise((resolve) => {
@@ -60,11 +65,12 @@ const createUi = async () => {
 		});
 	}
 	targetInsertion.prepend(container);
-	container.style.display = "none";
+	await _keyMap;
 	ReactDOM.createRoot(container).render(
 		<div
+			id="humpback-ui"
 			style={{
-				display: "flex",
+				display: "none",
 				gap: "0.5rem",
 				width: "100%",
 				justifyContent: "center",
@@ -111,7 +117,9 @@ const createUi = async () => {
 							fontSize: "0.75rem",
 						}}
 					>
-						{song.name} | {plugin.getKeybind(song.name)}
+						{song.name} |{" "}
+						{keyMap.get(plugin.getKeybind(song.name)) ??
+							plugin.getKeybind(song.name)}
 					</p>
 				</div>
 			))}
@@ -131,12 +139,12 @@ setInterval(() => {
 	try {
 		const animalId = game?.currentScene?.myAnimal?.fishLevelData?.fishLevel;
 		if (typeof animalId != "number" || animalId == prevAnimalId) return;
-		const ui = document.getElementById("humpback-ui");
+		const ui = document.getElementById("humpback-ui")?.parentElement;
 		if (!ui) return;
 		prevAnimalId = animalId;
 		console.log(animalId);
 		if (animalId == blockyfish.Animals.HumpbackWhale) {
-			ui.style.display = "";
+			ui.style.display = "flex";
 		} else {
 			ui.style.display = "none";
 		}
