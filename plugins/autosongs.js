@@ -71,6 +71,7 @@ const createUi = async () => {
 		<div
 			id="humpback-ui"
 			style={{
+				display: "flex",
 				gap: "0.5rem",
 				width: "100%",
 				justifyContent: "center",
