@@ -8,6 +8,10 @@
 			"file": "plugins/autoshake.js",
 			"version": "1.6"
 		},
+		"autosongs": {
+			"file": "plugins/autosongs.js",
+			"version": "1.0"
+		},
 		"autospin": {
 			"file": "plugins/autospin.js",
 			"version": "1.1"
