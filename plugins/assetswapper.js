@@ -7,63 +7,77 @@
 plugin.registerKeybind("Toggle skin swapper modal", "KeyK");
 
 let keyMap;
-const _keyMap = navigator.keyboard.getLayoutMap();
 (async () => {
-	keyMap = await _keyMap;
+	keyMap = await navigator.keyboard.getLayoutMap();
 })();
 
 let skinIdPersist = "";
-let extModalVisible = false;
-let extInputFocus = false;
+let modalVisibleRef = false;
+let inputFocusRef = false;
 let singletonInter = null;
-let toggleModal = () => {};
+let toggleModalRef = () => {};
+
+const toDigits = (v) => {
+	const s = typeof v === "string" ? v : String(v ?? "");
+	const m = s.match(/\d+/);
+	return m ? m[0] : "";
+};
+
 const AssetSwapButton = () => {
 	const [hovered, setHovered] = React.useState(false);
 	const [modalVisible, setModalVisible] = React.useState(false);
 	const [inputFocus, setInputFocus] = React.useState(false);
 	const [skinId, setSkinId] = React.useState(skinIdPersist);
+	const [inputKey, setInputKey] = React.useState(0);
+
+	const skinIdRef = React.useRef(skinId);
 
 	React.useEffect(() => {
-		skinIdPersist = skinId;
-		try {
-			if (skinId == "") return;
-			const n = +skinId;
-			if (!Number.isNaN(n)) game.currentScene.myAnimal.setSkin(n);
-		} catch {}
+		skinIdRef.current = skinId;
+	}, [skinId]);
+
+	const applySkin = (id) => {
+		const n = +id;
+		if (!Number.isNaN(n)) {
+			try {
+				game.currentScene.myAnimal.setSkin(n);
+			} catch {}
+		}
+	};
+
+	React.useEffect(() => {
+		skinIdPersist = skinId || "";
+		if (skinId) applySkin(skinId);
 	}, [skinId]);
 
 	React.useEffect(() => {
-		toggleModal = () => {
-			setModalVisible(!modalVisible);
-		};
-		extModalVisible = modalVisible;
-	}, [modalVisible, setModalVisible]);
+		modalVisibleRef = modalVisible;
+	}, [modalVisible]);
 
 	React.useEffect(() => {
-		extInputFocus = inputFocus;
-	}, [inputFocus, setInputFocus]);
+		inputFocusRef = inputFocus;
+	}, [inputFocus]);
 
 	React.useEffect(() => {
-		try {
-			clearInterval(singletonInter);
-		} catch {}
+		toggleModalRef = () => setModalVisible((v) => !v);
+	}, []);
 
+	React.useEffect(() => {
 		singletonInter = setInterval(() => {
-			try {
-				if (skinIdPersist == "") return;
-				const n = +skinIdPersist;
-				if (!Number.isNaN(n)) game.currentScene.myAnimal.setSkin(n);
-			} catch {}
+			if (skinIdPersist) applySkin(skinIdPersist);
 		}, 1000);
 
 		const handleKeyDown = (e) => {
-			if (extModalVisible && extInputFocus && !Number.isNaN(+e.key)) {
-				e.preventDefault();
-				e.stopImmediatePropagation();
-				e.stopPropagation();
-				setSkinId("" + (skinIdPersist.match(/\d+/) ?? "") + e.key);
-			}
+			if (!modalVisibleRef || !inputFocusRef) return;
+			if (e.key.length !== 1 || Number.isNaN(+e.key)) return;
+
+			e.preventDefault();
+			e.stopImmediatePropagation();
+			e.stopPropagation();
+
+			setSkinId((prev) => (prev || "") + e.key);
 		};
+
 		window.addEventListener("keydown", handleKeyDown, {
 			capture: true,
 			passive: false,
@@ -77,6 +91,24 @@ const AssetSwapButton = () => {
 			});
 		};
 	}, []);
+
+	const handleInputChange = (v) => {
+		const next = toDigits(v);
+		setSkinId(next);
+		if (!next) setInputKey((k) => k + 1);
+	};
+
+	const handleBackspace = (e) => {
+		if (e.key !== "Backspace") return;
+		e.preventDefault();
+		e.stopImmediatePropagation();
+		e.stopPropagation();
+		setSkinId((prev) => {
+			const next = (prev || "").slice(0, -1);
+			if (!next) setInputKey((k) => k + 1);
+			return next;
+		});
+	};
 
 	return (
 		<>
@@ -145,13 +177,13 @@ const AssetSwapButton = () => {
 					}}
 					onFocus={() => setInputFocus(true)}
 					onBlur={() => setInputFocus(false)}
+					onKeyDownCapture={handleBackspace}
 				>
 					<DeeeepioTextInput
+						key={inputKey}
 						placeholder="Skin ID"
 						value={skinId}
-						onChange={(v) => {
-							setSkinId(v.match(/\d+/));
-						}}
+						onChange={handleInputChange}
 					/>
 					<DeeeepioButton
 						color="gray"
@@ -175,20 +207,23 @@ const createUi = async () => {
 	let targetInsertion = document.querySelector(
 		".top-right .buttons.button-bar .inner",
 	);
+
 	if (!targetInsertion) {
 		await new Promise((resolve) => {
 			const inter = setInterval(() => {
 				targetInsertion = document.querySelector(
 					".top-right .buttons.button-bar .inner",
 				);
-				if (!targetInsertion) return;
-				clearInterval(inter);
-				resolve();
+				if (targetInsertion) {
+					clearInterval(inter);
+					resolve();
+				}
 			}, 300);
 		});
 	}
+
 	targetInsertion.prepend(container);
-	await _keyMap;
+	await navigator.keyboard.getLayoutMap();
 	ReactDOM.createRoot(container).render(<AssetSwapButton />);
 };
 
@@ -200,11 +235,13 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 });
 
 let held = false;
+
 plugin.onKeybindDown("Toggle skin swapper modal", () => {
 	if (held) return;
 	held = true;
-	toggleModal();
+	toggleModalRef();
 });
+
 plugin.onKeybindUp("Toggle skin swapper modal", () => {
 	held = false;
 });
@@ -215,6 +252,7 @@ const storeListCb = () => {
 	)) {
 		const container = document.createElement("div");
 		skin.appendChild(container);
+
 		ReactDOM.createRoot(container).render(
 			<button
 				className="id-copy"
@@ -234,9 +272,9 @@ const storeListCb = () => {
 				onClickCapture={(e) => {
 					e.stopImmediatePropagation();
 					try {
-						const id = skin
-							.querySelector("img")
-							.src.match(/(?<=deeeep\.io\/custom\/skins\/)\d+/)[0];
+						const src = skin.querySelector("img")?.src || "";
+						const id = toDigits(src);
+						if (!id) throw new Error();
 						navigator.clipboard
 							.writeText(id)
 							.then(() => ui.toast.success("Copied skin ID"));
@@ -258,8 +296,10 @@ const storeListCb = () => {
 		);
 	}
 };
+
 (async () => {
 	let observeContainer = document.querySelector("#app .vfm.modal");
+
 	if (!observeContainer) {
 		await new Promise((resolve) => {
 			const inter = setInterval(() => {
@@ -271,11 +311,13 @@ const storeListCb = () => {
 			}, 500);
 		});
 	}
+
 	const cb = () => {
 		if (router.getCurrent().name.includes("StoreSkins")) {
 			storeListCb();
 		}
 	};
+
 	const observer = new MutationObserver(cb);
 	observer.observe(observeContainer, {
 		childList: true,
