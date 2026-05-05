@@ -64,13 +64,13 @@ const createUi = async () => {
 			}, 300);
 		});
 	}
-	targetInsertion.prepend(container);
 	await _keyMap;
+	targetInsertion.prepend(container);
+	container.style.display = "none";
 	ReactDOM.createRoot(container).render(
 		<div
 			id="humpback-ui"
 			style={{
-				display: "none",
 				gap: "0.5rem",
 				width: "100%",
 				justifyContent: "center",
