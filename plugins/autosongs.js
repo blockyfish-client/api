@@ -47,7 +47,10 @@ const _keyMap = navigator.keyboard.getLayoutMap();
 	keyMap = await _keyMap;
 })();
 
+let uiCreationQueued = false;
 const createUi = async () => {
+	if (uiCreationQueued) return;
+	uiCreationQueued = true;
 	try {
 		document.getElementById("humpback-ui").parentElement.remove();
 	} catch {}
@@ -126,6 +129,7 @@ const createUi = async () => {
 			))}
 		</div>,
 	);
+	uiCreationQueued = false;
 };
 
 let game;
@@ -141,7 +145,7 @@ setInterval(() => {
 		const animalId = game?.currentScene?.myAnimal?.fishLevelData?.fishLevel;
 		if (typeof animalId != "number" || animalId == prevAnimalId) return;
 		const ui = document.getElementById("humpback-ui")?.parentElement;
-		if (!ui) return;
+		if (!ui) return createUi();
 		prevAnimalId = animalId;
 		console.log(animalId);
 		if (animalId == blockyfish.Animals.HumpbackWhale) {
