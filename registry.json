@@ -50,7 +50,7 @@
 		},
 		"xray": {
 			"file": "plugins/xray.js",
-			"version": "1.1"
+			"version": "1.2"
 		},
 		"pddoubleanimal": {
 			"file": "plugins/doubleanimal.js",
