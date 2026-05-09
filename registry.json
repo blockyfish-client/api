@@ -111,6 +111,10 @@
 		"nograbberanchor": {
 			"file": "plugins/nograbberanchor.js",
 			"version": "1.0"
+		},
+		"gpotpdot": {
+			"file": "plugins/gpotpdot.js",
+			"version": "1.0"
 		}
 	},
 	"assetpacks": [
