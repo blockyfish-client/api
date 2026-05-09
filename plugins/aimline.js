@@ -8,54 +8,51 @@ const geometry = new PIXI.Geometry()
 	.addAttribute(
 		"aVertexPosition",
 		[
-			//  x,   y
-			-2,
-			0, // tl
-			2,
-			0, // tr
-			2,
-			-1000, // br
-			-2,
-			-1000, // bl
+			// tl: x y
+			-2, 0,
+
+			// tr: x y
+			2, 0,
+
+			// br: x y
+			2, -1000,
+
+			// bl: x y
+			-2, -1000,
 		],
 		2,
 	)
 	.addAttribute(
 		"aColor",
 		[
-			//  r, g, b
-			1,
-			0,
-			0, // tl
-			1,
-			0,
-			0, // tr
-			1,
-			0,
-			0, // br
-			1,
-			0,
-			0, // bl
+			// tl: r g b
+			1, 0, 0,
+
+			// tr: r g b
+			1, 0, 0,
+
+			// br: r g b
+			1, 0, 0,
+
+			// bl: r g b
+			1, 0, 0,
 		],
 		3,
 	)
 	.addAttribute(
 		"aAlpha",
 		[
-			1, // tl
-			1, // tr
-			0, // br
-			0, // bl
+			// tl tr br bl
+			1, 1, 0, 0,
 		],
 		1,
 	)
 	.addIndex([
-		0,
-		1,
-		2, // first triangle
-		0,
-		2,
-		3, // second triangle
+		// first triangle
+		0, 1, 2,
+
+		// second triangle
+		0, 2, 3,
 	]);
 
 const shader = PIXI.Shader.from(
