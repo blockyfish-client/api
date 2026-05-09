@@ -4,9 +4,6 @@
 // @author pi
 // @tags visual, gameplay, client-side
 
-blockyfish.addEventListener("gameInit", ({ game }) => {
-	const inter = setInterval(() => {
-		if (game.currentScene == null) return clearInterval(inter);
-		game.viewport.clampZoom({ minWidth: 0, maxWidth: 1e7 });
-	}, 200);
+blockyfish.addEventListener('gameInit', ({ game }) => {
+    game.viewport.clampZoom({ minWidth: 0, maxWidth: 1e7 });
 });
