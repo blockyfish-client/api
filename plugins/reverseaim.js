@@ -14,7 +14,7 @@ blockyfish.addEventListener("gameInit", ({ game }) => {
 					game == null ||
 					game.currentScene == null ||
 					game.currentScene.myAnimals?.[0] == null ||
-					currentScene.myAnimals?.[0].visibleFishLevel !== 101
+					game.currentScene.myAnimals?.[0].visibleFishLevel !== 101
 				)
 					return reflect.apply(f, th, args);
 				const pos = reflect.apply(f, th, args);
@@ -26,7 +26,7 @@ blockyfish.addEventListener("gameInit", ({ game }) => {
 		});
 	}
 	if (!ishooked(game.currentScene.myAnimal)) {
-		hook(game.currentScene, "myAnimal", {
+		hook(game.currentScene, "myAnimals", {
 			get(target, prop, receiver) {
 				target.forEach((animal) => {
 					Object.defineProperty(animal, "_usingSkill", {
