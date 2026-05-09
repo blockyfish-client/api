@@ -1,5 +1,5 @@
 // @name No grabber anchoring
-// @id nograbberclamp
+// @id nograbberanchor
 // @description Makes the camera center your animal instead of the one grabbing you
 // @author moray
 // @tags visual, gameplay, client-side
