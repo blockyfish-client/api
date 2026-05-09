@@ -34,15 +34,15 @@
 		},
 		"nocameraclamp": {
 			"file": "plugins/nocameraclamp.js",
-			"version": "1.1"
+			"version": "1.2"
 		},
 		"noinvisibleanimals": {
 			"file": "plugins/noinvisibleanimals.js",
-			"version": "1.7"
+			"version": "1.8"
 		},
 		"nozoomlimit": {
 			"file": "plugins/nozoomlimit.js",
-			"version": "1.1"
+			"version": "1.2"
 		},
 		"quickdisconnect": {
 			"file": "plugins/quickdisconnect.js",
@@ -107,6 +107,10 @@
 		"assetswapper": {
 			"file": "plugins/assetswapper.js",
 			"version": "1.1"
+		},
+		"nograbberanchor": {
+			"file": "plugins/nograbberanchor.js",
+			"version": "1.0"
 		}
 	},
 	"assetpacks": [
