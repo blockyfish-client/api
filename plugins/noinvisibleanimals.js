@@ -4,7 +4,17 @@
 // @author pi, noam, and moray
 // @tags visual, gameplay, client-side
 
-const AIs = [18, 29, 44, 47, 52, 67, 77, 88, 118];
+const AIs = [
+	blockyfish.Animals.Pollock,
+	blockyfish.Animals.Remora,
+	blockyfish.Animals.Dragonfly,
+	blockyfish.Animals.Lanternfish,
+	blockyfish.Animals.BabyPenguin,
+	blockyfish.Animals.LionsManeJellyfish,
+	blockyfish.Animals.Firefly,
+	blockyfish.Animals.Sardine,
+	blockyfish.Animals.GiantSinophore,
+];
 
 blockyfish.addEventListener("gameInit", ({ game }) => {
 	hook(game.currentScene.entityManager, "getEntity", {
