@@ -40,7 +40,7 @@ const AssetSwapButton = () => {
 		const n = +id;
 		if (!Number.isNaN(n)) {
 			try {
-				game.currentScene.myAnimal.setSkin(n);
+				game.currentScene.myAnimals?.[0].setSkin(n);
 			} catch {}
 		}
 	};

@@ -142,7 +142,8 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 let prevAnimalId = null;
 setInterval(() => {
 	try {
-		const animalId = game?.currentScene?.myAnimal?.fishLevelData?.fishLevel;
+		const animalId =
+			game?.currentScene?.myAnimals?.[0]?.fishLevelData?.fishLevel;
 		if (typeof animalId != "number" || animalId == prevAnimalId) return;
 		const ui = document.getElementById("humpback-ui")?.parentElement;
 		if (!ui) return createUi();
@@ -161,7 +162,7 @@ for (const song of SONGS) {
 	plugin.onKeybindDown(song.name, () => {
 		if (
 			held ||
-			game?.currentScene?.myAnimal?.fishLevelData?.fishLevel !=
+			game?.currentScene?.myAnimals?.[0]?.fishLevelData?.fishLevel !=
 				blockyfish.Animals.HumpbackWhale
 		)
 			return;

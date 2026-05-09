@@ -13,8 +13,8 @@ blockyfish.addEventListener('gameInit', ({ game }) => {
                     !reverse ||
                     game == null ||
                     game.currentScene == null ||
-                    game.currentScene.myAnimal == null ||
-                    currentScene.myAnimal.visibleFishLevel !== 101
+                    game.currentScene.myAnimals?.[0] == null ||
+                    currentScene.myAnimals?.[0].visibleFishLevel !== 101
                 )
                     return reflect.apply(f, th, args);
                 const pos = reflect.apply(f, th, args);

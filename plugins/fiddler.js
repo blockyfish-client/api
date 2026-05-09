@@ -23,8 +23,8 @@ let game;
 let toggle = false;
 plugin.onKeybindDown("Toggle Godmode", () => {
 	if (
-		game?.currentScene?.myAnimal != null &&
-		game.currentScene.myAnimal.fishLevelData.fishLevel === 121
+		game?.currentScene?.myAnimals?.[0] != null &&
+		game.currentScene.myAnimals?.[0].fishLevelData.fishLevel === 121
 	)
 		toggle = !toggle;
 });
@@ -41,10 +41,10 @@ function tick() {
 			delay = plugin.getSetting("Delay (MS)");
 			interval = setInterval(tick, delay);
 		}
-		if (game?.currentScene?.myAnimal?.fishLevelData?.fishLevel !== 121)
+		if (game?.currentScene?.myAnimals?.[0]?.fishLevelData?.fishLevel !== 121)
 			return (toggle = false);
 		if (
-			game.currentScene.myAnimal.fishData.overHealth >=
+			game.currentScene.myAnimals?.[0].fishData.overHealth >=
 			plugin.getSetting("Limit")
 		)
 			return;
