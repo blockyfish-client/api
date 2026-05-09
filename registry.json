@@ -2,15 +2,15 @@
 	"pluginsMetadata": {
 		"aimline": {
 			"file": "plugins/aimline.js",
-			"version": "1.4"
+			"version": "1.5"
 		},
 		"autoshake": {
 			"file": "plugins/autoshake.js",
-			"version": "1.6"
+			"version": "1.7"
 		},
 		"autosongs": {
 			"file": "plugins/autosongs.js",
-			"version": "1.4"
+			"version": "1.5"
 		},
 		"autospin": {
 			"file": "plugins/autospin.js",
@@ -26,7 +26,7 @@
 		},
 		"boosthack": {
 			"file": "plugins/boosthack.js",
-			"version": "1.2"
+			"version": "1.3"
 		},
 		"iseedeadfish": {
 			"file": "plugins/iseedeadfish.js",
@@ -58,7 +58,7 @@
 		},
 		"reverseaim": {
 			"file": "plugins/reverseaim.js",
-			"version": "1.6"
+			"version": "1.7"
 		},
 		"autofill": {
 			"file": "plugins/autofill.js",
@@ -78,7 +78,7 @@
 		},
 		"fiddlergodmodeop": {
 			"file": "plugins/fiddler.js",
-			"version": "1.2"
+			"version": "1.3"
 		},
 		"custombackground": {
 			"file": "plugins/custombackground.js",
@@ -90,7 +90,7 @@
 		},
 		"hideboosttrail": {
 			"file": "plugins/hideboosttrail.js",
-			"version": "1.0"
+			"version": "1.1"
 		},
 		"v3ui": {
 			"file": "plugins/v3ui.js",
@@ -106,7 +106,7 @@
 		},
 		"assetswapper": {
 			"file": "plugins/assetswapper.js",
-			"version": "1.0"
+			"version": "1.1"
 		}
 	},
 	"assetpacks": [

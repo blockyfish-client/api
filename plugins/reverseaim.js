@@ -15,7 +15,7 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 					!reverse ||
 					game == null ||
 					game.currentScene == null ||
-					game.currentScene.myAnimal == null
+					game.currentScene.myAnimals?.[0] == null
 				)
 					return reflect.apply(f, th, args);
 				const pos = reflect.apply(f, th, args);
@@ -32,10 +32,10 @@ setInterval(() => {
 	if (
 		game == null ||
 		game.currentScene == null ||
-		game.currentScene.myAnimal == null
+		game.currentScene.myAnimals?.[0] == null
 	)
 		return;
-	const animal = game.currentScene.myAnimal;
+	const animal = game.currentScene.myAnimals?.[0];
 	switch (animal.fishLevelData.fishLevel) {
 		case 101:
 			//case 126: this wouldnt work

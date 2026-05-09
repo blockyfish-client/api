@@ -101,16 +101,19 @@ const includedAnimals = [
 let currentFishLevel = -1;
 let aimLine;
 const createAimLine = () => {
-	if (typeof game?.currentScene?.myAnimal?.visibleFishLevel === "undefined") {
+	if (
+		typeof game?.currentScene?.myAnimals?.[0]?.visibleFishLevel === "undefined"
+	) {
 		currentFishLevel = -1;
 		return;
 	}
-	if (game.currentScene.myAnimal.visibleFishLevel === currentFishLevel) return;
-	currentFishLevel = game.currentScene.myAnimal.visibleFishLevel;
+	if (game.currentScene.myAnimals?.[0].visibleFishLevel === currentFishLevel)
+		return;
+	currentFishLevel = game.currentScene.myAnimals?.[0].visibleFishLevel;
 	if (!includedAnimals.includes(currentFishLevel)) return;
 
 	aimLine = new PIXI.Mesh(geometry, shader);
-	game.currentScene.myAnimal.children[1].addChild(aimLine);
+	game.currentScene.myAnimals?.[0].children[1].addChild(aimLine);
 	aimLine.renderable = false;
 };
 
