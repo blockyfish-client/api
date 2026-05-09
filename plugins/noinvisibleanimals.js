@@ -1,7 +1,7 @@
 // @name No invisible animals
 // @id noinvisibleanimals
 // @description Makes invisible animals visible
-// @author pi, noam and moray
+// @author pi, noam, and moray
 // @tags visual, gameplay, client-side
 
 const AIs = [18, 29, 44, 47, 52, 67, 77, 88, 118];
