@@ -1,13 +1,11 @@
 // @name Reverse aim
 // @id reverseaim
 // @description Automatically reverses movement on some animals
-// @author noam
+// @author noam and moray
 // @tags gameplay, client-side
 
-let game;
 let reverse = false;
-blockyfish.addEventListener("gameInit", ({ game: _game }) => {
-	game = _game;
+blockyfish.addEventListener("gameInit", ({ game }) => {
 	if (!ishooked(game.inputManager.getMouseWorldPosition)) {
 		hook(game.inputManager, "getMouseWorldPosition", {
 			apply(f, th, args) {
@@ -15,7 +13,8 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 					!reverse ||
 					game == null ||
 					game.currentScene == null ||
-					game.currentScene.myAnimals?.[0] == null
+					game.currentScene.myAnimals?.[0] == null ||
+					game.currentScene.myAnimals?.[0].visibleFishLevel !== 101
 				)
 					return reflect.apply(f, th, args);
 				const pos = reflect.apply(f, th, args);
@@ -26,19 +25,21 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 			},
 		});
 	}
-});
-
-setInterval(() => {
-	if (
-		game == null ||
-		game.currentScene == null ||
-		game.currentScene.myAnimals?.[0] == null
-	)
-		return;
-	const animal = game.currentScene.myAnimals?.[0];
-	switch (animal.fishLevelData.fishLevel) {
-		case 101:
-			//case 126: this wouldnt work
-			reverse = animal._usingSkill;
+	if (!ishooked(game.currentScene.myAnimal)) {
+		hook(game.currentScene, "myAnimals", {
+			get(target, prop, receiver) {
+				target.forEach((animal) => {
+					Object.defineProperty(animal, "_usingSkill", {
+						set(val) {
+							reverse = val;
+						},
+						get() {
+							return reverse;
+						},
+					});
+				});
+				return reflect.get(target, prop, receiver);
+			},
+		});
 	}
 });
