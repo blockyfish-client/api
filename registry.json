@@ -34,7 +34,7 @@
 		},
 		"nocameraclamp": {
 			"file": "plugins/nocameraclamp.js",
-			"version": "1.2"
+			"version": "1.3"
 		},
 		"noinvisibleanimals": {
 			"file": "plugins/noinvisibleanimals.js",
@@ -42,7 +42,7 @@
 		},
 		"nozoomlimit": {
 			"file": "plugins/nozoomlimit.js",
-			"version": "1.2"
+			"version": "1.3"
 		},
 		"quickdisconnect": {
 			"file": "plugins/quickdisconnect.js",

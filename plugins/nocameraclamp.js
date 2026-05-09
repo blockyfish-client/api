@@ -5,21 +5,10 @@
 // @tags visual, gameplay, client-side
 
 blockyfish.addEventListener("gameInit", ({ game }) => {
-	Object.defineProperty(game.viewport.plugins.plugins, "clamp-zoom", {
-		set: function () {
-			this._clampZoom = null;
-		},
-		get: function () {
-			return this._clampZoom;
-		},
-	});
-
-	Object.defineProperty(game.viewport.plugins.plugins, "clamp", {
-		set: function () {
-			this._clampZoom = null;
-		},
-		get: function () {
-			return this._clampZoom;
+	game.viewport.plugins.remove("clamp");
+	hook(game.viewport, "clamp", {
+		apply(f, th, args) {
+			return;
 		},
 	});
 });
