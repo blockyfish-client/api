@@ -4,6 +4,6 @@
 // @author pi
 // @tags visual, gameplay, client-side
 
-blockyfish.addEventListener('gameInit', ({ game }) => {
-    game.viewport.clampZoom({ minWidth: 0, maxWidth: 1e7 });
+blockyfish.addEventListener("gameInit", ({ game }) => {
+	game.viewport.clampZoom({ minWidth: 0, maxWidth: 1e7 });
 });
