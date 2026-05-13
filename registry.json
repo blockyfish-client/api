@@ -115,6 +115,10 @@
 		"gpotpdot": {
 			"file": "plugins/gpotpdot.js",
 			"version": "1.0"
+		},
+		"spoofkiller": {
+			"file": "plugins/spoofkiller.js",
+			"version": "1.0"
 		}
 	},
 	"assetpacks": [
