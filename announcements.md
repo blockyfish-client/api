@@ -10,7 +10,7 @@
 - Fixed an issue where the Blockyfish Settings page could not be opened
 - Added missing animal IDs in `blockyfish.Animals` for plugins
 - Added support for Toxic Algae in Discord Rich Presence
-- Fixed plugins for optimization by [@moray-man](https://github.com/moray-man)
+- Fixed plugins for optimization by @moray-man
 
 ---
 
