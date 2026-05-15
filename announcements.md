@@ -1,3 +1,9 @@
+### v4.4.5
+
+- Fixed bug with saving plugin settings
+
+---
+
 ### v4.4.4
 
 - Fixed Windows installer
