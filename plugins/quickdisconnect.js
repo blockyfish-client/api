@@ -17,5 +17,10 @@ document.addEventListener("keydown", (e) => {
 		(e.ctrlKey || e.metaKey) &&
 		e.shiftKey
 	)
-		game.socketManager.disconnect();
+		game.socketManager.sendBytePacket(
+			blockyfish.encodeBytePacket(
+				gameState.token._value,
+				blockyfish.ActionPacket.QuitRoom,
+			),
+		);
 });
