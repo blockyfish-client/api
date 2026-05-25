@@ -40,11 +40,20 @@ document.querySelector("head").append(evowheelCss);
 
 const evowheelUrl =
 	"https://blockyfish-client.github.io/assets/evo_circle.min.png";
+let evowheelRef = null;
 const createEvowheel = () => {
 	const evowheel = document.createElement("div");
 	document.querySelector("div.game").prepend(evowheel);
 	React.createRoot(evowheel).render(
-		<img src={evowheelUrl} draggable="false" className="evowheel" alt="" />,
+		<img
+			ref={(el) => {
+				evowheelRef = el;
+			}}
+			src={evowheelUrl}
+			draggable="false"
+			className="evowheel"
+			alt=""
+		/>,
 	);
 };
 
@@ -55,14 +64,10 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 let isOpen = false;
 plugin.onKeybindDown("Show evo wheel", () => {
 	if (isOpen) return;
-	for (const evowheel of document.querySelectorAll(".evowheel")) {
-		evowheel.classList.add("open");
-	}
+	if (evowheelRef) evowheelRef.classList.add("open");
 	isOpen = true;
 });
 plugin.onKeybindUp("Show evo wheel", () => {
-	for (const evowheel of document.querySelectorAll(".evowheel")) {
-		evowheel.classList.remove("open");
-	}
+	if (evowheelRef) evowheelRef.classList.remove("open");
 	isOpen = false;
 });

@@ -23,6 +23,8 @@ const toDigits = (v) => {
 	return m ? m[0] : "";
 };
 
+let assetSwapContainerRef = null;
+
 const AssetSwapButton = () => {
 	const [hovered, setHovered] = React.useState(false);
 	const [modalVisible, setModalVisible] = React.useState(false);
@@ -113,7 +115,6 @@ const AssetSwapButton = () => {
 	return (
 		<>
 			<button
-				id="asset-swap-btn"
 				style={{
 					height: "2.5rem",
 					width: "2.5rem",
@@ -200,10 +201,11 @@ const AssetSwapButton = () => {
 
 const createUi = async () => {
 	try {
-		document.getElementById("asset-swap-btn").parentElement.remove();
+		assetSwapContainerRef?.remove();
 	} catch {}
 
 	const container = document.createElement("div");
+	assetSwapContainerRef = container;
 	let targetInsertion = document.querySelector(
 		".top-right .buttons.button-bar .inner",
 	);

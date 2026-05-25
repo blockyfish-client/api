@@ -48,14 +48,17 @@ const _keyMap = navigator.keyboard.getLayoutMap();
 })();
 
 let uiCreationQueued = false;
+let humpbackContainerRef = null;
+
 const createUi = async () => {
 	if (uiCreationQueued) return;
 	uiCreationQueued = true;
 	try {
-		document.getElementById("humpback-ui").parentElement.remove();
+		humpbackContainerRef?.remove();
 	} catch {}
 
 	const container = document.createElement("div");
+	humpbackContainerRef = container;
 	let targetInsertion = document.querySelector(".stats .middle");
 	if (!targetInsertion) {
 		await new Promise((resolve) => {
@@ -72,7 +75,6 @@ const createUi = async () => {
 	container.style.display = "none";
 	ReactDOM.createRoot(container).render(
 		<div
-			id="humpback-ui"
 			style={{
 				display: "flex",
 				gap: "0.5rem",
@@ -145,14 +147,13 @@ setInterval(() => {
 		const animalId =
 			game?.currentScene?.myAnimals?.[0]?.fishLevelData?.fishLevel;
 		if (typeof animalId != "number" || animalId == prevAnimalId) return;
-		const ui = document.getElementById("humpback-ui")?.parentElement;
-		if (!ui) return createUi();
+		if (!humpbackContainerRef) return createUi();
 		prevAnimalId = animalId;
 		console.log(animalId);
 		if (animalId == blockyfish.Animals.HumpbackWhale) {
-			ui.style.display = "flex";
+			humpbackContainerRef.style.display = "flex";
 		} else {
-			ui.style.display = "none";
+			humpbackContainerRef.style.display = "none";
 		}
 	} catch {}
 }, 300);

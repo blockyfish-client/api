@@ -10,7 +10,7 @@
 		},
 		"autosongs": {
 			"file": "plugins/autosongs.js",
-			"version": "1.5"
+			"version": "1.6"
 		},
 		"autospin": {
 			"file": "plugins/autospin.js",
@@ -22,11 +22,11 @@
 		},
 		"evowheel": {
 			"file": "plugins/evowheel.js",
-			"version": "1.21"
+			"version": "1.22"
 		},
 		"boosthack": {
 			"file": "plugins/boosthack.js",
-			"version": "1.3"
+			"version": "1.4"
 		},
 		"iseedeadfish": {
 			"file": "plugins/iseedeadfish.js",
@@ -106,7 +106,7 @@
 		},
 		"assetswapper": {
 			"file": "plugins/assetswapper.js",
-			"version": "1.1"
+			"version": "1.2"
 		},
 		"nograbberanchor": {
 			"file": "plugins/nograbberanchor.js",

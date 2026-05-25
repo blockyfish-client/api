@@ -4,16 +4,21 @@
 // @author pi
 // @tags gameplay, server-side
 
+let overlayRef = null;
+
 const createOverlay = () => {
 	try {
-		document.getElementById("ctrl-overlay").parentElement.remove();
+		overlayRef?.parentElement?.remove();
 	} catch {}
 
+	overlayRef = null;
 	const overlay = document.createElement("div");
 	document.querySelector("div.game").prepend(overlay);
 	ReactDOM.createRoot(overlay).render(
 		<div
-			id="ctrl-overlay"
+			ref={(el) => {
+				overlayRef = el;
+			}}
 			style={{
 				width: "100%",
 				height: "100%",
@@ -35,8 +40,8 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 
 const showCtrlOverlay = () => {
 	try {
-		if (game?.currentScene?.myAnimals?.[0]) {
-			document.getElementById("ctrl-overlay").style.pointerEvents = "all";
+		if (game?.currentScene?.myAnimals?.[0] && overlayRef) {
+			overlayRef.style.pointerEvents = "all";
 		}
 	} catch {}
 };
@@ -69,7 +74,7 @@ window.addEventListener(
 	(e) => {
 		try {
 			if (!e.ctrlKey && !e.metaKey && !e.altKey) {
-				document.getElementById("ctrl-overlay").style.pointerEvents = "none";
+				if (overlayRef) overlayRef.style.pointerEvents = "none";
 			}
 			if (!e.ctrlKey && !e.metaKey) {
 				ctrlKey = false;
@@ -124,7 +129,7 @@ window.addEventListener(
 );
 window.addEventListener("focus", () => {
 	try {
-		document.getElementById("ctrl-overlay").style.pointerEvents = "none";
+		if (overlayRef) overlayRef.style.pointerEvents = "none";
 		ctrlKey = false;
 		altKey = false;
 		shiftKey = false;
