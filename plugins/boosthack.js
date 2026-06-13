@@ -53,7 +53,7 @@ let shiftKey = false;
 const executeBoost = () => {
 	if (game?.currentScene?.myAnimals?.[0] == null) return;
 
-	const { BeakedWhale, BelugaWhale, CoconutCrab, ThresherShark } =
+	const { BeakedWhale, BelugaWhale, CoconutCrab, ThresherShark, Shark } =
 		blockyfish.Animals;
 	const lvl = game.currentScene.myAnimals?.[0]._visibleFishLevel;
 	try {
@@ -66,6 +66,11 @@ const executeBoost = () => {
 
 		// ctrl
 		if (!shiftKey) {
+			// filters
+			if (lvl === Shark && game?.currentScene?.myAnimals?.[0]?._usingSkill) {
+				blockyfish.boost();
+				return;
+			}
 			blockyfish.chargedBoost();
 			return;
 		}
