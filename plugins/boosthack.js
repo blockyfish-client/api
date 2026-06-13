@@ -57,31 +57,32 @@ const executeBoost = () => {
 		blockyfish.Animals;
 	const lvl = game.currentScene.myAnimals?.[0]._visibleFishLevel;
 	try {
-		if (ctrlKey) {
-			if (shiftKey) {
-				if ([ThresherShark, BeakedWhale, BelugaWhale].includes(lvl)) {
-					blockyfish.boost();
-					blockyfish.chargedBoost();
-				} else if (
-					lvl === CoconutCrab &&
-					game?.currentScene?.myAnimals?.[0]?._standing
-				) {
-					blockyfish.chargedBoost();
-					setTimeout(() => {
-						blockyfish.boost();
-					}, 45);
-					setTimeout(() => {
-						blockyfish.scalingBoost(41);
-					}, 90);
-				} else {
-					blockyfish.superJump();
-				}
-			} else {
-				blockyfish.chargedBoost();
-			}
-		} else if (altKey) {
+		// alt
+		if (!ctrlKey && altKey) {
 			blockyfish.halfChargedBoost();
+			return;
 		}
+		if (!ctrlKey) return;
+
+		// ctrl
+		if (!shiftKey) {
+			blockyfish.chargedBoost();
+			return;
+		}
+
+		// ctrl + shift
+		if ([ThresherShark, BeakedWhale, BelugaWhale].includes(lvl)) {
+			blockyfish.boost();
+			blockyfish.chargedBoost();
+			return;
+		}
+		if (lvl === CoconutCrab && game?.currentScene?.myAnimals?.[0]?._standing) {
+			blockyfish.chargedBoost();
+			setTimeout(() => blockyfish.boost(), 45);
+			setTimeout(() => blockyfish.scalingBoost(41), 90);
+			return;
+		}
+		blockyfish.superJump();
 	} catch {}
 };
 
