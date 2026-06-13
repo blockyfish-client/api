@@ -50,6 +50,9 @@ let ctrlKey = false;
 let altKey = false;
 let shiftKey = false;
 
+let lastBoost = 0;
+const boostCooldown = 250;
+
 const executeBoost = () => {
 	if (game?.currentScene?.myAnimals?.[0] == null) return;
 
@@ -67,10 +70,12 @@ const executeBoost = () => {
 		// ctrl
 		if (!shiftKey) {
 			// filters
+			if (lvl === CoconutCrab && lastBoost + boostCooldown > Date.now()) return;
 			if (lvl === Shark && game?.currentScene?.myAnimals?.[0]?._usingSkill) {
 				blockyfish.boost();
 				return;
 			}
+			lastBoost = Date.now();
 			blockyfish.chargedBoost();
 			return;
 		}
