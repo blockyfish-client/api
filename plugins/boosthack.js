@@ -49,6 +49,42 @@ const showCtrlOverlay = () => {
 let ctrlKey = false;
 let altKey = false;
 let shiftKey = false;
+
+const executeBoost = () => {
+	if (game?.currentScene?.myAnimals?.[0] == null) return;
+
+	const { BeakedWhale, BelugaWhale, CoconutCrab, ThresherShark } =
+		blockyfish.Animals;
+	const lvl = game.currentScene.myAnimals?.[0]._visibleFishLevel;
+	try {
+		if (ctrlKey) {
+			if (shiftKey) {
+				if ([ThresherShark, BeakedWhale, BelugaWhale].includes(lvl)) {
+					blockyfish.boost();
+					blockyfish.chargedBoost();
+				} else if (
+					lvl === CoconutCrab &&
+					game?.currentScene?.myAnimals?.[0]?._standing
+				) {
+					blockyfish.chargedBoost();
+					setTimeout(() => {
+						blockyfish.boost();
+					}, 45);
+					setTimeout(() => {
+						blockyfish.scalingBoost(41);
+					}, 90);
+				} else {
+					blockyfish.superJump();
+				}
+			} else {
+				blockyfish.chargedBoost();
+			}
+		} else if (altKey) {
+			blockyfish.halfChargedBoost();
+		}
+	} catch {}
+};
+
 window.addEventListener(
 	"keydown",
 	(e) => {
@@ -65,9 +101,12 @@ window.addEventListener(
 			if (e.shiftKey) {
 				shiftKey = true;
 			}
+			if (e.key === " " && (ctrlKey || altKey)) {
+				e.stopImmediatePropagation();
+			}
 		} catch {}
 	},
-	false,
+	{ capture: true },
 );
 window.addEventListener(
 	"keyup",
@@ -85,48 +124,15 @@ window.addEventListener(
 			if (!e.shiftKey) {
 				shiftKey = false;
 			}
-		} catch {}
-	},
-	false,
-);
-window.addEventListener(
-	"click",
-	(e) => {
-		if (game?.currentScene?.myAnimals?.[0] == null) return;
-
-		const { BeakedWhale, BelugaWhale, CoconutCrab, ThresherShark } =
-			blockyfish.Animals;
-		const lvl = game.currentScene.myAnimals?.[0]._visibleFishLevel;
-		try {
-			if (ctrlKey) {
-				if (shiftKey) {
-					if ([ThresherShark, BeakedWhale, BelugaWhale].includes(lvl)) {
-						blockyfish.boost();
-						blockyfish.chargedBoost();
-					} else if (
-						lvl === CoconutCrab &&
-						game?.currentScene?.myAnimals?.[0]?._standing
-					) {
-						blockyfish.chargedBoost();
-						setTimeout(() => {
-							blockyfish.boost();
-						}, 45);
-						setTimeout(() => {
-							blockyfish.scalingBoost(41);
-						}, 90);
-					} else {
-						blockyfish.superJump();
-					}
-				} else {
-					blockyfish.chargedBoost();
-				}
-			} else if (altKey) {
-				blockyfish.halfChargedBoost();
+			if (e.key === " " && (ctrlKey || altKey)) {
+				e.stopImmediatePropagation();
+				executeBoost();
 			}
 		} catch {}
 	},
-	false,
+	{ capture: true },
 );
+window.addEventListener("click", executeBoost, false);
 window.addEventListener("focus", () => {
 	try {
 		if (overlayRef) overlayRef.style.pointerEvents = "none";
