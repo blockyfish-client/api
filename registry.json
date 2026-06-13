@@ -26,7 +26,7 @@
 		},
 		"boosthack": {
 			"file": "plugins/boosthack.js",
-			"version": "1.5"
+			"version": "1.6"
 		},
 		"iseedeadfish": {
 			"file": "plugins/iseedeadfish.js",
