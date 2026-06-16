@@ -1,7 +1,7 @@
 // @name GPO teleport dot
 // @id gpotpdot
 // @description Adds a dot to indicate GPO teleport location.
-// @author hzbakkalgazi
+// @author akgazi
 // @tags visual, gameplay, client-side
 
 const radius = 40;
