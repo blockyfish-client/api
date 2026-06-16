@@ -1,3 +1,29 @@
+### v4.5.0
+
+- Added an "Advanced" tab in settings
+  - Added in-app log viewer for easier debugging
+  - Added buttons to clear cache, clear site data, and clear Blockyfish data
+  - Added reload and restart buttons
+- Improved plugin update experience
+  - Added a "Check for updates" button in the Plugins page
+  - Added a prompt to reload when all plugins have been updated
+- Improved the plugin editor
+  - Added Tailwind CSS intellisense, including:
+    - Autocomplete for Tailwind classes
+    - Color swatches and a color picker
+    - Support for arbitrary Tailwind values
+  - Added Prettier code formatting
+  - Added a menubar for users who are unable to use keyboard shortcuts
+- Added support for plugins to use Tailwind CSS v4
+- Improved error handling and stability
+  - Added fatal error handling with a dialog prompt
+  - Fixed a bug where the plugin list could appear empty
+  - Fixed a bug where Discord Rich Presence connection errors could cause issues
+  - Fixed a bug where the app could crash when closing the window
+- Updated to Electron v42
+
+---
+
 ### v4.4.5
 
 - Fixed bug with saving plugin settings
