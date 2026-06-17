@@ -1,3 +1,16 @@
+### v4.5.2
+
+- Fixed lag issue caused by error logger
+- Fixed an issue where plugins could not be enabled on a fresh install
+
+---
+
+### v4.5.1
+
+- Fixed I/O and network blocking caused by error logger
+
+---
+
 ### v4.5.0
 
 - Added an "Advanced" tab in settings
