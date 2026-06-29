@@ -1,6 +1,6 @@
 // @name Fiddler godmode
 // @id fiddlergodmodeop
-// @description Press toggle godmode keybind to get godmode
+// @description Press toggle godmode keybind to get infinite health boost while using fiddler crab ability
 // @author noam
 // @tags gameplay, server-side
 
@@ -49,6 +49,10 @@ function tick() {
 		)
 			return;
 		if (!toggle) return;
+		if (game?.currentScene?.myAnimal?.danceGame == null)
+			return;
+		game.currentScene.myAnimal.danceGame.balls.length = 0;
+		game.currentScene.myAnimal.danceGame.children.length = 0;
 		game.socketManager.sendBytePacket(
 			blockyfish.encodeBytePacket(
 				gameState.token._value,
