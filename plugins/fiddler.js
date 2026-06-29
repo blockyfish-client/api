@@ -43,16 +43,16 @@ function tick() {
 		}
 		if (game?.currentScene?.myAnimals?.[0]?.fishLevelData?.fishLevel !== 121)
 			return (toggle = false);
-		if (
-			game.currentScene.myAnimals?.[0].fishData.overHealth >=
-			plugin.getSetting("Limit")
-		)
-			return;
 		if (!toggle) return;
 		if (game?.currentScene?.myAnimal?.danceGame == null)
 			return;
 		game.currentScene.myAnimal.danceGame.balls.length = 0;
 		game.currentScene.myAnimal.danceGame.children.length = 0;
+		if (
+			game.currentScene.myAnimals?.[0].fishData.overHealth >=
+			plugin.getSetting("Limit")
+		)
+			return;
 		game.socketManager.sendBytePacket(
 			blockyfish.encodeBytePacket(
 				gameState.token._value,
