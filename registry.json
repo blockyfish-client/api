@@ -78,7 +78,7 @@
 		},
 		"fiddlergodmodeop": {
 			"file": "plugins/fiddler.js",
-			"version": "1.3"
+			"version": "1.4"
 		},
 		"custombackground": {
 			"file": "plugins/custombackground.js",
