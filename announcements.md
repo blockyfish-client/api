@@ -1,3 +1,73 @@
+### v4.5.2
+
+- Fixed lag issue caused by error logger
+- Fixed an issue where plugins could not be enabled on a fresh install
+
+---
+
+### v4.5.1
+
+- Fixed I/O and network blocking caused by error logger
+
+---
+
+### v4.5.0
+
+- Added an "Advanced" tab in settings
+  - Added in-app log viewer for easier debugging
+  - Added buttons to clear cache, clear site data, and clear Blockyfish data
+  - Added reload and restart buttons
+- Improved plugin update experience
+  - Added a "Check for updates" button in the Plugins page
+  - Added a prompt to reload when all plugins have been updated
+- Improved the plugin editor
+  - Added Tailwind CSS intellisense, including:
+    - Autocomplete for Tailwind classes
+    - Color swatches and a color picker
+    - Support for arbitrary Tailwind values
+  - Added Prettier code formatting
+  - Added a menubar for users who are unable to use keyboard shortcuts
+- Added support for plugins to use Tailwind CSS v4
+- Improved error handling and stability
+  - Added fatal error handling with a dialog prompt
+  - Fixed a bug where the plugin list could appear empty
+  - Fixed a bug where Discord Rich Presence connection errors could cause issues
+  - Fixed a bug where the app could crash when closing the window
+- Updated to Electron v42
+
+---
+
+### v4.4.5
+
+- Fixed bug with saving plugin settings
+
+---
+
+### v4.4.4
+
+- Fixed Windows installer
+- Fixed plugin editor type definitions
+
+---
+
+### v4.4.3
+
+- Fixed an issue where the Blockyfish Settings page could not be opened
+- Added missing animal IDs in `blockyfish.Animals` for plugins
+- Added support for Toxic Algae in Discord Rich Presence
+- Fixed plugins for optimization by @moray-man
+
+---
+
+### v4.4.2
+
+- Fixed property name decoding
+- Fixed `game.currentScene.myAnimal`
+- Removed home page promotional links (Miniapps AI and .io games)
+- Themed Google sign-in button to look consistent with the rest of the UI
+
+---
+
 ### v4.4.1
 
 - Fixed a bug where Blockyfish would not load properly if Deeeep.io loaded faster than data from the Blockyfish API

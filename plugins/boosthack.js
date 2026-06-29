@@ -4,16 +4,21 @@
 // @author pi
 // @tags gameplay, server-side
 
+let overlayRef = null;
+
 const createOverlay = () => {
 	try {
-		document.getElementById("ctrl-overlay").parentElement.remove();
-	} catch { }
+		overlayRef?.parentElement?.remove();
+	} catch {}
 
+	overlayRef = null;
 	const overlay = document.createElement("div");
 	document.querySelector("div.game").prepend(overlay);
 	ReactDOM.createRoot(overlay).render(
 		<div
-			id="ctrl-overlay"
+			ref={(el) => {
+				overlayRef = el;
+			}}
 			style={{
 				width: "100%",
 				height: "100%",
@@ -35,15 +40,62 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 
 const showCtrlOverlay = () => {
 	try {
-		if (game?.currentScene?.myAnimal) {
-			document.getElementById("ctrl-overlay").style.pointerEvents = "all";
+		if (game?.currentScene?.myAnimals?.[0] && overlayRef) {
+			overlayRef.style.pointerEvents = "all";
 		}
-	} catch { }
+	} catch {}
 };
 
 let ctrlKey = false;
 let altKey = false;
 let shiftKey = false;
+
+let lastBoost = 0;
+const boostCooldown = 250;
+
+const executeBoost = () => {
+	if (game?.currentScene?.myAnimals?.[0] == null) return;
+
+	const { BeakedWhale, BelugaWhale, CoconutCrab, ThresherShark, Shark } =
+		blockyfish.Animals;
+	const lvl = game.currentScene.myAnimals?.[0]._visibleFishLevel;
+	try {
+		// alt
+		if (!ctrlKey && altKey) {
+			blockyfish.halfChargedBoost();
+			return;
+		}
+		if (!ctrlKey) return;
+
+		// ctrl
+		if (!shiftKey) {
+			// filters
+			if (lvl === CoconutCrab && lastBoost + boostCooldown > Date.now()) return;
+			if (lvl === Shark && game?.currentScene?.myAnimals?.[0]?._usingSkill) {
+				blockyfish.boost();
+				return;
+			}
+			lastBoost = Date.now();
+			blockyfish.chargedBoost();
+			return;
+		}
+
+		// ctrl + shift
+		if ([ThresherShark, BeakedWhale, BelugaWhale].includes(lvl)) {
+			blockyfish.boost();
+			blockyfish.chargedBoost();
+			return;
+		}
+		if (lvl === CoconutCrab && game?.currentScene?.myAnimals?.[0]?._standing) {
+			blockyfish.chargedBoost();
+			setTimeout(() => blockyfish.boost(), 45);
+			setTimeout(() => blockyfish.scalingBoost(41), 90);
+			return;
+		}
+		blockyfish.superJump();
+	} catch {}
+};
+
 window.addEventListener(
 	"keydown",
 	(e) => {
@@ -60,16 +112,19 @@ window.addEventListener(
 			if (e.shiftKey) {
 				shiftKey = true;
 			}
-		} catch { }
+			if (e.key === " " && (ctrlKey || altKey)) {
+				e.stopImmediatePropagation();
+			}
+		} catch {}
 	},
-	false,
+	{ capture: true },
 );
 window.addEventListener(
 	"keyup",
 	(e) => {
 		try {
 			if (!e.ctrlKey && !e.metaKey && !e.altKey) {
-				document.getElementById("ctrl-overlay").style.pointerEvents = "none";
+				if (overlayRef) overlayRef.style.pointerEvents = "none";
 			}
 			if (!e.ctrlKey && !e.metaKey) {
 				ctrlKey = false;
@@ -80,53 +135,20 @@ window.addEventListener(
 			if (!e.shiftKey) {
 				shiftKey = false;
 			}
-		} catch { }
-	},
-	false,
-);
-window.addEventListener(
-	"click",
-	(e) => {
-		if (game?.currentScene?.myAnimal == null) return;
-
-		const { BeakedWhale, BelugaWhale, CoconutCrab, ThresherShark } =
-			blockyfish.Animals;
-		const lvl = game.currentScene.myAnimal._visibleFishLevel;
-		try {
-			if (ctrlKey) {
-				if (shiftKey) {
-					if ([ThresherShark, BeakedWhale, BelugaWhale].includes(lvl)) {
-						blockyfish.boost();
-						blockyfish.chargedBoost();
-					} else if (
-						lvl === CoconutCrab &&
-						game?.currentScene?.myAnimal?._standing
-					) {
-						blockyfish.chargedBoost();
-						setTimeout(() => {
-							blockyfish.boost();
-						}, 45);
-						setTimeout(() => {
-							blockyfish.scalingBoost(41);
-						}, 90);
-					} else {
-						blockyfish.superJump();
-					}
-				} else {
-					blockyfish.chargedBoost();
-				}
-			} else if (altKey) {
-				blockyfish.halfChargedBoost();
+			if (e.key === " " && (ctrlKey || altKey)) {
+				e.stopImmediatePropagation();
+				executeBoost();
 			}
-		} catch { }
+		} catch {}
 	},
-	false,
+	{ capture: true },
 );
+window.addEventListener("click", executeBoost, false);
 window.addEventListener("focus", () => {
 	try {
-		document.getElementById("ctrl-overlay").style.pointerEvents = "none";
+		if (overlayRef) overlayRef.style.pointerEvents = "none";
 		ctrlKey = false;
 		altKey = false;
 		shiftKey = false;
-	} catch { }
+	} catch {}
 });

@@ -12,15 +12,15 @@ blockyfish.addEventListener("gameInit", ({ game: _game }) => {
 	} catch {}
 	inter = setInterval(() => {
 		try {
-			if (!game?.currentScene?.myAnimal) return;
+			if (!game?.currentScene?.myAnimals?.[0]) return;
 
 			hook(
-				Object.getPrototypeOf(game.currentScene.myAnimal.fadingTrail),
+				Object.getPrototypeOf(game.currentScene.myAnimals?.[0].fadingTrail),
 				"enable",
 				{ apply() {} },
 			);
 			Object.defineProperty(
-				Object.getPrototypeOf(game.currentScene.myAnimal.bubblesEmitter),
+				Object.getPrototypeOf(game.currentScene.myAnimals?.[0].bubblesEmitter),
 				"emit",
 				{ set: () => {} },
 			);

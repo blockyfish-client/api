@@ -53,16 +53,16 @@ const setEnabled = (enabled) => {
 	return;
 };
 
-const { CookiecutterShark, Snake, WolfEel } = blockyfish.Animals;
+const { Anaconda, CookiecutterShark, Snake, WolfEel } = blockyfish.Animals;
 setInterval(() => {
 	if (
-		game?.currentScene?.myAnimal == null ||
+		game?.currentScene?.myAnimals?.[0] == null ||
 		game?.inputManager?.getMouseWorldPosition == null
 	)
 		return;
 	if (!on && !allowAuto) return;
 
-	const a = game.currentScene.myAnimal._holdedEntities.find((e) =>
+	const a = game.currentScene.myAnimals?.[0]._holdedEntities.find((e) =>
 		[Anaconda, CookiecutterShark, Snake, WolfEel].includes(
 			e.fishLevelData.fishLevel,
 		),
@@ -70,7 +70,7 @@ setInterval(() => {
 	if (!on && !a) return;
 
 	const mpos = game.inputManager.getMouseWorldPosition();
-	const ppos = game.currentScene.myAnimal.position;
+	const ppos = game.currentScene.myAnimals?.[0].position;
 	const angleRadians = Math.atan2(mpos.y - ppos._y, mpos.x - ppos._x);
 	const incr = FORWARD ? 2000 : 1500;
 	const bpos = [

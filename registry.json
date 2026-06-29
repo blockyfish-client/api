@@ -2,11 +2,15 @@
 	"pluginsMetadata": {
 		"aimline": {
 			"file": "plugins/aimline.js",
-			"version": "1.4"
+			"version": "1.5"
 		},
 		"autoshake": {
 			"file": "plugins/autoshake.js",
-			"version": "1.5"
+			"version": "1.7"
+		},
+		"autosongs": {
+			"file": "plugins/autosongs.js",
+			"version": "1.6"
 		},
 		"autospin": {
 			"file": "plugins/autospin.js",
@@ -14,15 +18,15 @@
 		},
 		"bettervision": {
 			"file": "plugins/bettervision.js",
-			"version": "1.1"
+			"version": "1.2"
 		},
 		"evowheel": {
 			"file": "plugins/evowheel.js",
-			"version": "1.21"
+			"version": "1.22"
 		},
 		"boosthack": {
 			"file": "plugins/boosthack.js",
-			"version": "1.2"
+			"version": "1.6"
 		},
 		"iseedeadfish": {
 			"file": "plugins/iseedeadfish.js",
@@ -30,23 +34,23 @@
 		},
 		"nocameraclamp": {
 			"file": "plugins/nocameraclamp.js",
-			"version": "1.1"
+			"version": "1.3"
 		},
 		"noinvisibleanimals": {
 			"file": "plugins/noinvisibleanimals.js",
-			"version": "1.7"
+			"version": "1.8"
 		},
 		"nozoomlimit": {
 			"file": "plugins/nozoomlimit.js",
-			"version": "1.1"
+			"version": "1.3"
 		},
 		"quickdisconnect": {
 			"file": "plugins/quickdisconnect.js",
-			"version": "1.2"
+			"version": "1.3"
 		},
 		"xray": {
 			"file": "plugins/xray.js",
-			"version": "1.1"
+			"version": "1.2"
 		},
 		"pddoubleanimal": {
 			"file": "plugins/doubleanimal.js",
@@ -54,7 +58,7 @@
 		},
 		"reverseaim": {
 			"file": "plugins/reverseaim.js",
-			"version": "1.5"
+			"version": "1.7"
 		},
 		"autofill": {
 			"file": "plugins/autofill.js",
@@ -74,7 +78,7 @@
 		},
 		"fiddlergodmodeop": {
 			"file": "plugins/fiddler.js",
-			"version": "1.2"
+			"version": "1.3"
 		},
 		"custombackground": {
 			"file": "plugins/custombackground.js",
@@ -86,7 +90,7 @@
 		},
 		"hideboosttrail": {
 			"file": "plugins/hideboosttrail.js",
-			"version": "1.0"
+			"version": "1.1"
 		},
 		"v3ui": {
 			"file": "plugins/v3ui.js",
@@ -99,6 +103,22 @@
 		"bypasschatfilter": {
 			"file": "plugins/bypasschatfilter.js",
 			"version": "1.1"
+		},
+		"assetswapper": {
+			"file": "plugins/assetswapper.js",
+			"version": "1.2"
+		},
+		"nograbberanchor": {
+			"file": "plugins/nograbberanchor.js",
+			"version": "1.0"
+		},
+		"gpotpdot": {
+			"file": "plugins/gpotpdot.js",
+			"version": "1.0"
+		},
+		"spoofkiller": {
+			"file": "plugins/spoofkiller.js",
+			"version": "1.0"
 		}
 	},
 	"assetpacks": [
@@ -110,7 +130,7 @@
 	],
 	"themes": [],
 	"knownversions": ["1cbfe812"],
-	"version": "4.4.1",
+	"version": "4.5.2",
 	"showalphabutton": false,
 	"logo": {
 		"animal1": "arapaima",
