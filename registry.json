@@ -119,6 +119,10 @@
 		"spoofkiller": {
 			"file": "plugins/spoofkiller.js",
 			"version": "1.0"
+		},
+		"autododge": {
+			"file": "plugins/autododge.js",
+			"version": "1.5"
 		}
 	},
 	"assetpacks": [
